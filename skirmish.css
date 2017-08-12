@@ -1,0 +1,36 @@
+
+.Blob div:hover {
+    border: 1px solid #000000;
+}
+
+
+
+#BlobRed1 {
+height: 20px;
+width: 20px;
+border-radius: 50%;
+position: absolute;
+top: 4%;
+left: 3%;
+background: #ff0000;
+}
+
+#BlobRed2 {
+height: 20px;
+width: 20px;
+border-radius: 50%;
+position: absolute;
+top: 7%;
+left: 3%;
+background: #ff0000;
+}
+
+#BlobBlue1 {
+height: 20px;
+width: 20px;
+border-radius: 50%;
+position: absolute;
+bottom: 4%;
+right: 3%;
+background: #0000FF;
+}
