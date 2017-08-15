@@ -1,7 +1,5 @@
 
-function SelectBlob1()
+function SelectBlob(div)
 {
-    //test for onclick 'selected' animation
-    var Blobs = document.getElementById("BlobBlue1");
-    Blobs.style.backgroundColor = "#000000";
+    div.style.backgroundColor = "#FFFF00";
 }
