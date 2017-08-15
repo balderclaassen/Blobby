@@ -16,27 +16,34 @@
 }
 
 
-
 #BlobRed1 {
-height: 20px;
-width: 20px;
-position: absolute;
-top: 4%;
-left: 3%;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top: 4%;
+    left: 3%;
 }
 
 #BlobRed2 {
-height: 20px;
-width: 20px;
-position: absolute;
-top: 7%;
-left: 3%;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top: 7%;
+    left: 3%;
 }
 
 #BlobBlue1 {
-height: 20px;
-width: 20px;
-position: absolute;
-bottom: 4%;
-right: 3%;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    bottom: 4%;
+    right: 3%;
+}
+
+#BlobBlue2 {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    bottom: 45%;
+    right: 55%;
 }

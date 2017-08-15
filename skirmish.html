@@ -8,6 +8,10 @@
     <meta charset="utf-8">
     <title>Skirmish</title>
 
+    <!--[if lte IE 9]>
+    You seem to be using a version of Internet Explorer below IE10. This means you browser is no longer recieving security updates. Please consider upgrading to IE10 or higher, or even better, use Firefox, Chrome or any other browser. Blobby will not function properly on IE versions below IE10.
+      <![endif]-->
+     <!--This is because of Element.classList being used in the .js file-->
 </head>
 
 
@@ -16,15 +20,27 @@
 
 <body>
 
+    <div class="map">
+
     <div>
 
-        <div id="BlobRed1" class="Blob BlobRed" onclick="SelectBlob(this)"></div>
+        <div id="BlobRed1" class="Blob BlobRed" onclick="SelectBlobP1(this)"></div>
 
-        <div id="BlobRed2" class="Blob BlobRed" onclick="SelectBlob(this)"></div>
+        <div id="BlobRed2" class="Blob BlobRed" onclick="SelectBlobP1(this)"></div>
 
 
 
-        <div id="BlobBlue1" class="Blob BlobBlue" onclick="SelectBlob(this)"></div>
+        <div id="BlobBlue1" class="Blob BlobBlue" onclick="SelectBlobP2(this)"></div>
+
+        <div id="BlobBlue2" onclick="SelectBlobP2(this)"></div>
+
+        <div id="button">
+            <button onclick="SpawnBlob()">Spawn</button>
+        </div>
+
+
+    </div>
+
     </div>
 
 </body>
