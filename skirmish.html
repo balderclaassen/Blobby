@@ -11,7 +11,7 @@
     <!--[if lte IE 9]>
     You seem to be using a version of Internet Explorer below IE10. This means you browser is no longer recieving security updates. Please consider upgrading to IE10 or higher, or even better, use Firefox, Chrome or any other browser. Blobby will not function properly on IE versions below IE10.
       <![endif]-->
-     <!--This is because of Element.classList being used in the .js file-->
+    <!--This is because of Element.classList being used in skirmish.js -->
 </head>
 
 
@@ -22,24 +22,33 @@
 
     <div class="map">
 
-        <div id="Blobs">
 
-            <div id="BlobRed1" class="Blob BlobRed" onclick="SelectBlobP1(this)"></div>
+        <div id="RedBlobs">
 
-            <div id="BlobRed2" class="Blob BlobRed" onclick="SelectBlobP1(this)"></div>
+            <div id="RedBlob1" class="Blob SmallBlob RedBlob" onclick="SelectBlobP1(this)"></div>
 
-
-
-            <div id="BlobBlue1" class="Blob BlobBlue" onclick="SelectBlobP2(this)"></div>
-
-            <div id="BlobBlue2" onclick="SelectBlobP2(this)"></div>
-
-            <div id="button">
-                <button onclick="SpawnBlob()">Spawn</button>
-            </div>
-
+            <div id="RedBlob2" class="Blob SmallBlob RedBlob" onclick="SelectBlobP1(this)"></div>
 
         </div>
+
+
+        <div id="BlueBlobs">
+
+            <div id="BlueBlob1" class="Blob SmallBlob BlueBlob" onclick="SelectBlobP2(this)"></div>
+
+            <div id="BlueBlob2" onclick="SelectBlobP2(this)"></div>
+
+        </div>
+
+
+        <div id="SpawnBlueBlobs">
+            <button onclick="CreateBlueBlob()">Spawn</button>
+        </div>
+
+        <div id="SpawnRedBlobs">
+            <button onclick="CreateRedBlob()">Spawn</button>
+        </div>
+
 
     </div>
 
