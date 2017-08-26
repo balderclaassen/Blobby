@@ -7,43 +7,58 @@
     border-radius: 50%;
 }
 
-.BlobBlue {
+.BlueBlob {
     background: #0000FF;
 }
 
-.BlobRed {
+.RedBlob {
     background: #ff0000;
 }
 
-
-#BlobRed1 {
+.SmallBlob {
     height: 20px;
     width: 20px;
+}
+
+
+#RedBlob1 {
     position: absolute;
     top: 4%;
     left: 3%;
 }
 
-#BlobRed2 {
-    height: 20px;
-    width: 20px;
+#RedBlob2 {
     position: absolute;
     top: 7%;
     left: 3%;
 }
 
-#BlobBlue1 {
-    height: 20px;
-    width: 20px;
+#BlueBlob1 {
     position: absolute;
     bottom: 4%;
     right: 3%;
 }
 
-#BlobBlue2 {
-    height: 20px;
-    width: 20px;
+#BlueBlob2 {
     position: absolute;
     bottom: 45%;
     right: 55%;
+}
+
+#BlueBlob3 {
+    position: absolute;
+    bottom: 55%;
+    right: 45%;
+}
+
+#BlueBlob4 {
+    position: absolute;
+    bottom: 50%;
+    right: 55%;
+}
+
+#BlueBlob5 {
+    position: absolute;
+    bottom: 50%;
+    right: 45%;
 }
