@@ -1,3 +1,4 @@
+// |||||||||||||||||||||||||||||||||| Functions used by other functions begin
 // count +1 on every run for Blob ID's.
 var n = 2;
 function incrementBlue()
@@ -8,8 +9,11 @@ function incrementRed()
 {
     return ++n;
 }
+// |||||||||||||||||||||||||||||||||| Functions used by other functions end
 
 
+
+// |||||||||||||||||||||||||||||||||| Select Blobs begin
 function SelectBlobP1(div)
 {
     div.classList.add("SelectedP1");
@@ -21,6 +25,8 @@ function SelectBlobP2(div)
     div.classList.add("SelectedP2");
     div.style.border = "1px solid #000000";
 }
+// |||||||||||||||||||||||||||||||||| Select Blobs end
+
 
 
 // function MoveBlobP1() {
@@ -28,12 +34,14 @@ function SelectBlobP2(div)
 // }
 
 //deprecated
-function SpawnBlob()
-{
-    BlueBlob2.classList.add("Blob", "BlueBlob", "SmallBlob");
-}
+// function SpawnBlob()
+// {
+//     BlueBlob2.classList.add("Blob", "BlueBlob", "SmallBlob");
+// }
 
 
+
+// |||||||||||||||||||||||||||||||||| Create/Spawn Blobs begin
 function CreateRedBlob()
 {
     var newdiv = document.createElement("div");
@@ -60,3 +68,4 @@ function CreateBlueBlob()
     console.log(newdivID);
 
 }
+// |||||||||||||||||||||||||||||||||| Create/Spawn Blobs end
