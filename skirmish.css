@@ -1,4 +1,26 @@
 
+body {
+    margin: 0px; /*Unsetting browser default margin of 8px*/
+}
+
+}
+
+#sidepanel {
+    min-width: 80px;
+    width: 7vw;
+    height: 120vh;
+    border-right: 1px solid #000000;
+    position: absolute;
+    left: 0%;
+}
+
+#map {
+    height:120vh;
+    width: 93vw;
+    position: absolute;
+    right: 0%;
+}
+
 .Blob:hover {
     border: 1px solid #000000;
 }
@@ -22,14 +44,14 @@
 
 
 #RedBlob1 {
-    position: absolute;
+    position: relative;
     top: 4%;
     left: 3%;
 }
 
 #RedBlob2 {
-    position: absolute;
-    top: 7%;
+    position: relative;
+    top: 20%;
     left: 3%;
 }
 
