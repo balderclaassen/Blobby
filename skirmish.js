@@ -14,6 +14,41 @@ function incrementRed()
 
 
 
+// |||||||||||||||||||||||||||||||||| EventListeners begin
+document.addEventListener("DOMContentLoaded", EventListeners);
+
+function EventListeners()
+{
+var map = document.getElementById("map");
+map.addEventListener("click", MoveBlob);
+}
+// |||||||||||||||||||||||||||||||||| EventListeners end
+
+
+
+// |||||||||||||||||||||||||||||||||| Move Blobs begin
+var coardinateX;
+var coardinateY;
+
+function MoveBlob(event)
+{
+var coardinateX = event.offsetX;
+var coardinateY = event.offsetY;
+// debugging
+console.log(coardinateX);
+var SelectedToBeMoved = document.getElementsByClassName("SelectedP1");
+for (var i = 0; i < SelectedToBeMoved.length; i++) {
+    SelectedToBeMoved[i].style.left = coardinateX  + "px";
+    SelectedToBeMoved[i].style.top = coardinateY  + "px";
+}
+// debugging
+console.log(SelectedToBeMoved);
+console.log(coardinateY);
+}
+// |||||||||||||||||||||||||||||||||| Move Blobs end
+
+
+
 // |||||||||||||||||||||||||||||||||| Select Blobs begin
 function SelectBlobP1(div)
 {
@@ -38,7 +73,7 @@ function CreateRedBlob()
     newdiv.setAttribute("id", newdivID);
     newdiv.classList.add("Blob", "SmallBlob", "RedBlob");
     newdiv.setAttribute("onclick", "SelectBlobP1(this)");
-    //for debugging
+    //debugging
     console.log(newdivID);
 }
 
@@ -51,7 +86,7 @@ function CreateBlueBlob()
     newdiv.setAttribute("id", newdivID);
     newdiv.classList.add("Blob", "SmallBlob", "BlueBlob");
     newdiv.setAttribute("onclick", "SelectBlobP2(this)");
-    //for debugging
+    //debugging
     console.log(newdivID);
 
 }
