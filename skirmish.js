@@ -30,18 +30,6 @@ function SelectBlobP2(div)
 
 
 
-// function MoveBlobP1() {
-//
-// }
-
-//deprecated
-// function SpawnBlob()
-// {
-//     BlueBlob2.classList.add("Blob", "BlueBlob", "SmallBlob");
-// }
-
-
-
 // |||||||||||||||||||||||||||||||||| Create/Spawn Blobs begin
 function CreateRedBlob()
 {
