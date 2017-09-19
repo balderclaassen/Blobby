@@ -27,6 +27,7 @@ body {
 
 .Blob {
     border-radius: 50%;
+    position: absolute;
 }
 
 .BlueBlob {
@@ -44,43 +45,36 @@ body {
 
 
 #RedBlob1 {
-    position: relative;
     top: 4%;
     left: 3%;
 }
 
 #RedBlob2 {
-    position: relative;
     top: 20%;
     left: 3%;
 }
 
 #BlueBlob1 {
-    position: absolute;
     bottom: 4%;
     right: 3%;
 }
 
 #BlueBlob2 {
-    position: absolute;
     bottom: 45%;
     right: 55%;
 }
 
-#BlueBlob3 {
-    position: absolute;
+#RedBlob3 {
     bottom: 55%;
     right: 45%;
 }
 
-#BlueBlob4 {
-    position: absolute;
+#RedBlob4 {
     bottom: 50%;
     right: 55%;
 }
 
-#BlueBlob5 {
-    position: absolute;
+#RedBlob5 {
     bottom: 50%;
     right: 45%;
 }
