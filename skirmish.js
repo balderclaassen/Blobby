@@ -1,13 +1,14 @@
 // |||||||||||||||||||||||||||||||||| Functions used by other functions begin
 // count +1 on every run for Blob ID's.
-var n = 2;
+var nRed = 2;
+var nBlue = 2;
 function incrementBlue()
 {
-    return ++n;
+    return ++nBlue;
 }
 function incrementRed()
 {
-    return ++n;
+    return ++nRed;
 }
 // |||||||||||||||||||||||||||||||||| Functions used by other functions end
 
@@ -48,8 +49,8 @@ function CreateRedBlob()
     var container = document.getElementById('RedBlobs');
     var newdivID = "RedBlob" + incrementRed();
     container.appendChild(newdiv);
-    newdiv.classList.add("Blob", "SmallBlob", "RedBlob");
     newdiv.setAttribute("id", newdivID);
+    newdiv.classList.add("Blob", "SmallBlob", "RedBlob");
     newdiv.setAttribute("onclick", "SelectBlobP1(this)");
     //for debugging
     console.log(newdivID);
@@ -61,8 +62,8 @@ function CreateBlueBlob()
     var container = document.getElementById('BlueBlobs');
     var newdivID = "BlueBlob" + incrementBlue();
     container.appendChild(newdiv);
-    newdiv.classList.add("Blob", "SmallBlob", "BlueBlob");
     newdiv.setAttribute("id", newdivID);
+    newdiv.classList.add("Blob", "SmallBlob", "BlueBlob");
     newdiv.setAttribute("onclick", "SelectBlobP2(this)");
     //for debugging
     console.log(newdivID);
