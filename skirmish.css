@@ -20,6 +20,15 @@ body {
     position: absolute;
     right: 0%;
 }
+#ActivateDarkMode {
+    position: absolute;
+}
+
+#ActivateLightMode {
+    position: absolute;
+    display: none;
+}
+
 
 .Blob:hover {
     border: 1px solid #000000;

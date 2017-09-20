@@ -26,6 +26,31 @@ map.addEventListener("click", MoveBlob);
 
 
 
+// |||||||||||||||||||||||||||||||||| sidepanel begin
+function DarkModeOn()
+{
+    //DarkOne by Atom
+    var map = document.getElementById("map");
+    map.style.backgroundColor = "#353b45";
+    var sidepanel = document.getElementById("sidepanel");
+    sidepanel.style.backgroundColor = "#21252b";
+    ActivateDarkMode.style.display = "none";
+    ActivateLightMode.style.display = "block";
+}
+function LightModeOn()
+{
+    //DarkMode Chrome (for gtk?)
+    var map = document.getElementById("map");
+    map.style.backgroundColor = "#FFFFFF";
+    var sidepanel = document.getElementById("sidepanel");
+    sidepanel.style.backgroundColor = "#FFFFFF";
+    ActivateLightMode.style.display = "none";
+    ActivateDarkMode.style.display = "block";
+}
+// |||||||||||||||||||||||||||||||||| sidepanel end
+
+
+
 // |||||||||||||||||||||||||||||||||| Move Blobs begin
 var coardinateX;
 var coardinateY;
