@@ -17,23 +17,26 @@ body {
 #map {
     height:120vh;
     width: 93vw;
-#SpawnButtons {
+#Buttons {
     width: 100%;
-    position: absolute;
-    right: 0%;
     display: flex;
     flex-flow: row wrap;
 }
 
-#SpawnRedButton {
-    display: inline;
-    width: 50%;
-    min-width: 57px;
+#DarkModeButton {
+    width: 51%;
+    min-width: 80px;
     order:1;
-    /*flex-grow:1;*/
 }
 
-#SpawnBlueButton {
+#LightModeButton {
+    width: 51%;
+    min-width: 80px;
+    order:1;
+    display: none;
+}
+
+#SpawnRedButton {
     display: inline;
     width: 50%;
     min-width: 57px;
@@ -41,16 +44,15 @@ body {
     /*flex-grow:1;*/
 }
 
-#DarkModeButton {
-    width: 51%;
-    min-width: 80px;
+#SpawnBlueButton {
+    display: inline;
+    width: 50%;
+    min-width: 57px;
+    order:3;
+    /*flex-grow:1;*/
 }
 
-#LightModeButton {
-    width: 51%;
-    min-width: 80px;
-    display: none;
-}
+
 
 .SelectedP1, .SelectedP2 {
     border: 1px solid #000000;
