@@ -29,6 +29,9 @@ body {
     display: none;
 }
 
+.SelectedP1, .SelectedP2 {
+    border: 1px solid #000000;
+}
 
 .Blob:hover {
     border: 1px solid #000000;
