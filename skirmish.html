@@ -22,13 +22,14 @@
 
     <div id="sidepanel">
 
-        <div id="ActivateDarkMode">
-            <button onclick="DarkModeOn()">DarkMode</button>
+        <div id="buttons">
+            <button id="DarkModeButton" onclick="DarkModeOn()">DarkMode</button>
+            <button id="LightModeButton" onclick="LightModeOn()">LightMode</button>
+            <div id="SpawnButtons">
+                    <button id="SpawnRedButton" onclick="CreateRedBlob()">Spawn</button>
+                    <button id="SpawnBlueButton" onclick="CreateBlueBlob()">Spawn</button>
+            </div>
         </div>
-        <div id="ActivateLightMode">
-            <button onclick="LightModeOn()">LightMode</button>
-        </div>
-
     </div>
 
     <div id="map">
@@ -50,19 +51,8 @@
             <div id="BlueBlob2" onclick="SelectBlobP2(this)"></div>
 
         </div>
-
-
-        <div id="SpawnBlueBlobs">
-            <button onclick="CreateBlueBlob()">Spawn</button>
-        </div>
-
-        <div id="SpawnRedBlobs">
-            <button onclick="CreateRedBlob()">Spawn</button>
-        </div>
-
-
     </div>
-
+</div>
 </body>
 
 </html>

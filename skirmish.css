@@ -17,15 +17,38 @@ body {
 #map {
     height:120vh;
     width: 93vw;
+#SpawnButtons {
+    width: 100%;
     position: absolute;
     right: 0%;
-}
-#ActivateDarkMode {
-    position: absolute;
+    display: flex;
+    flex-flow: row wrap;
 }
 
-#ActivateLightMode {
-    position: absolute;
+#SpawnRedButton {
+    display: inline;
+    width: 50%;
+    min-width: 57px;
+    order:1;
+    /*flex-grow:1;*/
+}
+
+#SpawnBlueButton {
+    display: inline;
+    width: 50%;
+    min-width: 57px;
+    order:2;
+    /*flex-grow:1;*/
+}
+
+#DarkModeButton {
+    width: 51%;
+    min-width: 80px;
+}
+
+#LightModeButton {
+    width: 51%;
+    min-width: 80px;
     display: none;
 }
 
