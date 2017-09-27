@@ -7,16 +7,21 @@ body {
 
 #sidepanel {
     min-width: 80px;
-    width: 7vw;
+    width: 7%;
     height: 120vh;
-    border-right: 1px solid #000000;
     position: absolute;
     left: 0%;
+    border-right: "1px solid #000000";
 }
 
 #map {
     height:120vh;
-    width: 93vw;
+    width: 93%;
+    max-width: calc(100% - 80px);
+    position: absolute;
+    right: 0%;
+}
+
 #Buttons {
     width: 100%;
     display: flex;
