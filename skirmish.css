@@ -29,32 +29,26 @@ body {
 }
 
 #DarkModeButton {
-    width: 51%;
-    min-width: 80px;
     order:1;
+    flex-grow: 1;
 }
 
 #LightModeButton {
-    width: 51%;
-    min-width: 80px;
     order:1;
+    flex-grow: 1;
     display: none;
 }
 
 #SpawnRedButton {
     display: inline;
-    width: 50%;
-    min-width: 57px;
     order:2;
-    /*flex-grow:1;*/
+    flex-grow:1;
 }
 
 #SpawnBlueButton {
     display: inline;
-    width: 50%;
-    min-width: 57px;
     order:3;
-    /*flex-grow:1;*/
+    flex-grow:1;
 }
 
 
