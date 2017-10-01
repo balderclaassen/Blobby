@@ -80,13 +80,11 @@ body {
 
 
 #SpawnRedButton {
-    display: inline;
     order:2;
     flex-grow:1;
 }
 
 #SpawnBlueButton {
-    display: inline;
     order:3;
     flex-grow:1;
 }
