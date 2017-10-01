@@ -27,25 +27,24 @@ map.addEventListener("click", MoveBlob);
 
 
 // |||||||||||||||||||||||||||||||||| sidepanel begin
-function DarkModeOn()
+function DarkMode1On()
 {
     //DarkOne by Atom
-    var map = document.getElementById("map");
-    map.style.backgroundColor = "#353b45";
-    var sidepanel = document.getElementById("sidepanel");
-    sidepanel.style.backgroundColor = "#21252b";
-    ActivateDarkMode.style.display = "none";
-    ActivateLightMode.style.display = "block";
+    document.body.classList.remove("LightMode");
+    document.body.classList.add("DarkMode1");
 }
+
+function DarkMode2On()
+{
+    //DarkMode Chrome(defaultUbuntuGnome)
+    document.body.classList.remove("DarkMode1");
+    document.body.classList.add("DarkMode2");
+}
+
 function LightModeOn()
 {
-    //DarkMode Chrome (for gtk?)
-    var map = document.getElementById("map");
-    map.style.backgroundColor = "#FFFFFF";
-    var sidepanel = document.getElementById("sidepanel");
-    sidepanel.style.backgroundColor = "#FFFFFF";
-    ActivateLightMode.style.display = "none";
-    ActivateDarkMode.style.display = "block";
+    document.body.classList.remove("DarkMode2");
+    document.body.classList.add("LightMode");
 }
 // |||||||||||||||||||||||||||||||||| sidepanel end
 

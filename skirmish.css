@@ -22,6 +22,26 @@ body {
     right: 0%;
 }
 
+.LightMode #map {
+    background-color: #FFFFFF;
+}
+.LightMode #sidepanel {
+    background-color: #FFFFFF;
+}
+
+.DarkMode1 #map {
+    background-color: #353b45;
+}
+.DarkMode1 #sidepanel {
+    background-color: #21252b;
+}
+
+.DarkMode2 #map {
+    background-color: #33393B;
+}
+.DarkMode2 #sidepanel {
+    background-color: #232729;
+}
 #Buttons {
     width: 100%;
     display: flex;
@@ -29,9 +49,16 @@ body {
     overflow: hidden;
 }
 
-#DarkModeButton {
+#DarkMode1Button {
     order:1;
     flex-grow: 1;
+    display: none;
+}
+
+#DarkMode2Button {
+    order:1;
+    flex-grow: 1;
+    display: none;
 }
 
 #LightModeButton {
@@ -54,12 +81,25 @@ body {
 
 
 
-.SelectedP1, .SelectedP2 {
-    border: 1px solid #000000;
+.LightMode  #DarkMode1Button {
+    display: block;
+}
+.DarkMode1 .DarkMode2 #DarkMode1Button {
+    display: none;
 }
 
-.Blob:hover {
-    border: 1px solid #000000;
+.DarkMode1 #DarkMode2Button {
+    display: block;
+}
+.DarkMode2 .LightMode #DarkMode2Button {
+    display: none;
+}
+
+.DarkMode2 #LightModeButton {
+    display: block;
+}
+.LightMode .DarkMode1 #LightModeButton {
+    display: none;
 }
 
 .Blob {
@@ -114,4 +154,15 @@ body {
 #RedBlob5 {
     bottom: 50%;
     right: 45%;
+}
+.LightMode .Blob:hover, .LightMode .SelectedP1, .LightMode .SelectedP2 {
+    border: 1px solid #000000;
+}
+
+.DarkMode1 .Blob:hover, .DarkMode1 .SelectedP1, .DarkMode1 .SelectedP2 {
+    border: 1.5px solid #000000;
+}
+
+.DarkMode2 .Blob:hover, .DarkMode2 .SelectedP1, .DarkMode2 .SelectedP2 {
+    border: 1.5px solid #000000;
 }
