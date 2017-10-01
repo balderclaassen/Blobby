@@ -5,6 +5,7 @@ body {
 
 }
 
+/* |||||||||||||||||||||||||||||||||| Screen begin*/
 #sidepanel {
     min-width: 80px;
     width: 7%;
@@ -22,6 +23,9 @@ body {
     right: 0%;
 }
 
+
+
+/*Screen theming begin*/
 .LightMode #map {
     background-color: #FFFFFF;
 }
@@ -42,6 +46,13 @@ body {
 .DarkMode2 #sidepanel {
     background-color: #232729;
 }
+/*Screen theming end*/
+/* |||||||||||||||||||||||||||||||||| Screen end*/
+
+
+
+
+/* |||||||||||||||||||||||||||||||||| Buttons begin*/
 #Buttons {
     width: 100%;
     display: flex;
@@ -67,6 +78,7 @@ body {
     display: none;
 }
 
+
 #SpawnRedButton {
     display: inline;
     order:2;
@@ -81,6 +93,7 @@ body {
 
 
 
+/*Buttons theming begin*/
 .LightMode  #DarkMode1Button {
     display: block;
 }
@@ -101,7 +114,13 @@ body {
 .LightMode .DarkMode1 #LightModeButton {
     display: none;
 }
+/*Buttons theming end*/
+/* |||||||||||||||||||||||||||||||||| Buttons end*/
 
+
+
+
+/* |||||||||||||||||||||||||||||||||| Blobs begin*/
 .Blob {
     border-radius: 50%;
     position: absolute;
@@ -155,6 +174,10 @@ body {
     bottom: 50%;
     right: 45%;
 }
+
+
+
+/*Blobs theming begin*/
 .LightMode .Blob:hover, .LightMode .SelectedP1, .LightMode .SelectedP2 {
     border: 1px solid #000000;
 }
@@ -166,3 +189,5 @@ body {
 .DarkMode2 .Blob:hover, .DarkMode2 .SelectedP1, .DarkMode2 .SelectedP2 {
     border: 1.5px solid #000000;
 }
+/*Blobs theming end*/
+/* |||||||||||||||||||||||||||||||||| Blobs end*/
