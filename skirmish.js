@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", EventListeners);
 function EventListeners()
 {
 var map = document.getElementById("map");
-map.addEventListener("click", MoveBlob);
+map.addEventListener("click", MoveBlob, true);
 }
 // |||||||||||||||||||||||||||||||||| EventListeners end
 
