@@ -51,9 +51,6 @@ function LightModeOn()
 
 
 // |||||||||||||||||||||||||||||||||| Move Blobs begin
-var coardinateX;
-var coardinateY;
-
 function MoveBlob(event)
 {
 var coardinateX = event.offsetX;
@@ -112,6 +109,5 @@ function CreateBlueBlob()
     newdiv.setAttribute("onclick", "SelectBlobP2(this)");
     //debugging
     console.log(newdivID);
-
 }
 // |||||||||||||||||||||||||||||||||| Create/Spawn Blobs end
