@@ -92,7 +92,10 @@ function CreateRedBlob()
     var newdivID = "RedBlob" + incrementRed();
     container.appendChild(newdiv);
     newdiv.setAttribute("id", newdivID);
-    newdiv.classList.add("Blob", "SmallBlob", "RedBlob");
+    //Polyfill IE11 below. IE doesn't support multiple arguments for classList.add/.remove
+    newdiv.classList.add("Blob");
+    newdiv.classList.add("SmallBlob");
+    newdiv.classList.add("Red");
     newdiv.setAttribute("onclick", "SelectBlobP1(this)");
     //debugging
     console.log(newdivID);
@@ -105,7 +108,10 @@ function CreateBlueBlob()
     var newdivID = "BlueBlob" + incrementBlue();
     container.appendChild(newdiv);
     newdiv.setAttribute("id", newdivID);
-    newdiv.classList.add("Blob", "SmallBlob", "BlueBlob");
+    //Polyfill IE11 below. IE doesn't support multiple arguments for classList.add/.remove
+    newdiv.classList.add("Blob");
+    newdiv.classList.add("SmallBlob");
+    newdiv.classList.add("Blue");
     newdiv.setAttribute("onclick", "SelectBlobP2(this)");
     //debugging
     console.log(newdivID);
