@@ -148,16 +148,6 @@ body {
     left: 3%;
 }
 
-#BlueBlob1 {
-    bottom: 4%;
-    right: 3%;
-}
-
-#BlueBlob2 {
-    bottom: 45%;
-    right: 55%;
-}
-
 #RedBlob3 {
     bottom: 55%;
     right: 45%;
@@ -169,11 +159,54 @@ body {
 }
 
 #RedBlob5 {
-    bottom: 50%;
+    bottom: 40%;
     right: 45%;
 }
 
+#RedBlob6 {
+    bottom: 30%;
+    right: 35%;
+}
 
+#RedBlob7 {
+    bottom: 50%;
+    right: 25%;
+}
+
+#RedBlob8 {
+    bottom: 65%;
+    right: 15%;
+}
+
+#BlueBlob1 {
+    bottom: 4%;
+    right: 3%;
+}
+
+#BlueBlob2 {
+    bottom: 45%;
+    right: 55%;
+}
+
+#BlueBlob3 {
+    bottom: 20%;
+    right: 25%;
+}
+
+#BlueBlob4 {
+    bottom: 85%;
+    right: 35%;
+}
+
+#BlueBlob5 {
+    bottom: 35%;
+    right: 80%;
+}
+
+#BlueBlob6 {
+    bottom: 30%;
+    right: 15%;
+}
 
 /*Blobs theming begin*/
 .LightMode .Blob:hover, .LightMode .SelectedP1, .LightMode .SelectedP2 {
