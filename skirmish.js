@@ -53,17 +53,24 @@ function LightModeOn()
 // |||||||||||||||||||||||||||||||||| Move Blobs begin
 function MoveBlob(event)
 {
-var coardinateX = event.offsetX;
-var coardinateY = event.offsetY;
+var coardinateX = event.offsetX + "px";
+var coardinateY = event.offsetY + "px";
 // debugging
 console.log(coardinateX);
-var SelectedToBeMoved = document.getElementsByClassName("SelectedP1");
-for (var i = 0; i < SelectedToBeMoved.length; i++) {
-    SelectedToBeMoved[i].style.left = coardinateX  + "px";
-    SelectedToBeMoved[i].style.top = coardinateY  + "px";
+var SelectedToBeMovedRed = document.getElementsByClassName("SelectedP1");
+for (var i = 0; i < SelectedToBeMovedRed.length; i++) {
+    SelectedToBeMovedRed[i].style.left = coardinateX;
+    SelectedToBeMovedRed[i].style.top = coardinateY;
+    SelectedToBeMovedRed[i].classList.remove("SelectedP1");
+}
+var SelectedToBeMovedBlue = document.getElementsByClassName("SelectedP2");
+for (var x = 0; x < SelectedToBeMovedBlue.length; x++) {
+    SelectedToBeMovedBlue[x].style.left = coardinateX;
+    SelectedToBeMovedBlue[x].style.top = coardinateY;
+    SelectedToBeMovedBlue[x].classList.remove("SelectedP2");
 }
 // debugging
-console.log(SelectedToBeMoved);
+console.log(SelectedToBeMovedRed);
 console.log(coardinateY);
 }
 // |||||||||||||||||||||||||||||||||| Move Blobs end
