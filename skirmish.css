@@ -119,16 +119,21 @@ body {
 
 
 /* |||||||||||||||||||||||||||||||||| Blobs begin*/
+.Spawner {
+    width: 80px;
+    height: 80px;
+}
+
 .Blob {
     border-radius: 50%;
     position: absolute;
 }
 
-.BlueBlob {
+.Blue {
     background: #0000FF;
 }
 
-.RedBlob {
+.Red {
     background: #ff0000;
 }
 
@@ -138,6 +143,11 @@ body {
     transition: left 2s, right 2s, top 2s, bottom 2s linear;
 }
 
+
+#RedSpawner {
+    top: 15%;
+    left: 15%;
+}
 
 #RedBlob1 {
     top: 4%;
@@ -150,63 +160,68 @@ body {
 }
 
 #RedBlob3 {
-    bottom: 55%;
-    right: 45%;
+    top: 55%;
+    left: 45%;
 }
 
 #RedBlob4 {
-    bottom: 50%;
-    right: 55%;
+    top: 50%;
+    left: 55%;
 }
 
 #RedBlob5 {
-    bottom: 40%;
-    right: 45%;
+    top: 40%;
+    left: 45%;
 }
 
 #RedBlob6 {
-    bottom: 30%;
-    right: 35%;
+    top: 70%;
+    left: 65%;
 }
 
 #RedBlob7 {
-    bottom: 50%;
-    right: 25%;
+    top: 50%;
+    left: 75%;
 }
 
 #RedBlob8 {
-    bottom: 65%;
-    right: 15%;
+    top: 35%;
+    left: 85%;
+}
+
+#BlueSpawner {
+    top: 85%;
+    left: 85%;
 }
 
 #BlueBlob1 {
-    bottom: 4%;
-    right: 3%;
+    top: 96%;
+    left: 97%;
 }
 
 #BlueBlob2 {
-    bottom: 45%;
-    right: 55%;
+    top: 45%;
+    left: 55%;
 }
 
 #BlueBlob3 {
-    bottom: 20%;
-    right: 25%;
+    top: 80%;
+    left: 75%;
 }
 
 #BlueBlob4 {
-    bottom: 85%;
-    right: 35%;
+    top: 15%;
+    left: 65%;
 }
 
 #BlueBlob5 {
-    bottom: 35%;
-    right: 80%;
+    top: 65%;
+    left: 20%;
 }
 
 #BlueBlob6 {
-    bottom: 30%;
-    right: 15%;
+    top: 70%;
+    left: 85%;
 }
 
 /*Blobs theming begin*/
