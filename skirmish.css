@@ -135,6 +135,7 @@ body {
 .SmallBlob {
     height: 20px;
     width: 20px;
+    transition: left 2s, right 2s, top 2s, bottom 2s linear;
 }
 
 
