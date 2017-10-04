@@ -1,8 +1,13 @@
 
-body {
-    margin: 0px; /*Unsetting browser default margin of 8px*/
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
 }
 
+body {
+    margin: 0; /*Unsetting UserAgentStyles margin of 8px*/
 }
 
 /* |||||||||||||||||||||||||||||||||| Screen begin*/
@@ -13,10 +18,11 @@ body {
     position: absolute;
     left: 0%;
     border-right: 1px solid #000;
+    box-sizing: border-box;
 }
 
 #map {
-    height:120vh;
+    height: 120vh;
     width: 93%;
     max-width: calc(100% - 80px);
     position: absolute;
@@ -133,6 +139,7 @@ body {
 .Blob {
     border-radius: 50%;
     position: absolute;
+    box-sizing: content-box;
 }
 
 .Blue {
