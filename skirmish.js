@@ -69,25 +69,17 @@ for (var x = 0; x < SelectedToBeMovedBlue.length; x++) {
     SelectedToBeMovedBlue[x].style.top = coardinateY;
     SelectedToBeMovedBlue[x].classList.remove("SelectedP2");
 }
-// debugging
-console.log(SelectedToBeMovedRed);
-console.log(coardinateY);
-}
+
 // |||||||||||||||||||||||||||||||||| Move Blobs end
 
 
 
-// |||||||||||||||||||||||||||||||||| Select Blobs begin
-function SelectBlobP1(div)
+// |||||||||||||||||||||||||||||||||| Selection begin
+function Select(div)
 {
-    div.classList.add("SelectedP1");
+    div.classList.add("Selected");
 }
-
-function SelectBlobP2(div)
-{
-    div.classList.add("SelectedP2");
-}
-// |||||||||||||||||||||||||||||||||| Select Blobs end
+// |||||||||||||||||||||||||||||||||| Selection end
 
 
 
@@ -103,7 +95,7 @@ function CreateRedBlob()
     newdiv.classList.add("Blob");
     newdiv.classList.add("SmallBlob");
     newdiv.classList.add("Red");
-    newdiv.setAttribute("onclick", "SelectBlobP1(this)");
+    newdiv.setAttribute("onclick", "Select(this)");
     //debugging
     console.log(newdivID);
 }
@@ -119,7 +111,7 @@ function CreateBlueBlob()
     newdiv.classList.add("Blob");
     newdiv.classList.add("SmallBlob");
     newdiv.classList.add("Blue");
-    newdiv.setAttribute("onclick", "SelectBlobP2(this)");
+    newdiv.setAttribute("onclick", "Select(this)");
     //debugging
     console.log(newdivID);
 }

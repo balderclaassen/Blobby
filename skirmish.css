@@ -124,6 +124,12 @@ body {
     height: 80px;
 }
 
+.Building {
+    border-radius: 50%;
+    position: absolute;
+    box-sizing: content-box;
+}
+
 .Blob {
     border-radius: 50%;
     position: absolute;
@@ -240,6 +246,19 @@ body {
     border: 1.5px solid #000;
 }
 
+.LightMode .Building:hover,
+.LightMode .Building.Selected {
+    border: 1.5px solid #000;
+}
+
+.DarkMode1 .Building:hover,
+.DarkMode1 .Building.Selected {
+    border: 2px solid #000;
+}
+
+.DarkMode2 .Building:hover,
+.DarkMode2 .Building.Selected {
+    border: 2px solid #000;
 }
 /*Blobs theming end*/
 /* |||||||||||||||||||||||||||||||||| Blobs end*/
