@@ -10,7 +10,7 @@ This project is very much unfinished. The current version is more showing/testin
 
 I will set up a gh-pages site for the game soon, when it reaches a basic stage of being actually playable. (Which I definetly think will happen before the end of October.)
 If you want to check it out before that you can download (or git clone) the files from this Github page, unpack the zip somewhere and launch skirmish.html in your favorite web browser.
-
-
-Have a nice day,
+<br><br>
+<br><br>
+Have a nice day,  
 Balder
