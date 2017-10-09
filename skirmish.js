@@ -21,6 +21,7 @@ function EventListeners()
 {
 var map = document.getElementById("map");
 map.addEventListener("click", MoveBlob, true);
+map.addEventListener("contextmenu", UnSelectAll);
 }
 // |||||||||||||||||||||||||||||||||| EventListeners end
 
@@ -108,6 +109,34 @@ function UnSelectAllBlueBlobs() {
     for (var i = 0; i < BlueBlobs.length;) {
     BlueBlobs[i].classList.remove("Selected");
     }
+}
+
+function UnSelectAll(event) {
+    var LowNestedDiv = event.target;
+    var HighNestedDiv = this;
+   event.preventDefault();
+
+   if (LowNestedDiv === HighNestedDiv)
+   {
+       var SelectedBlobs = document.getElementsByClassName("Selected");
+       for (var i = 0; i < SelectedBlobs.length;) {
+           SelectedBlobs[i].classList.remove("Selected");
+       }
+   }
+
+// && Player === "P1" |AKA If Player is P1
+   else if (LowNestedDiv.classList.contains("Red")) {
+       LowNestedDiv.classList.remove("Selected");
+       console.log("Unselected a Blob");
+   }
+
+// && Player === "P1" |AKA If Player is P1
+   else if (LowNestedDiv.classList.contains("Blue")) {
+       //Cancel attack/move command |AKA stop blob moving.
+       console.log("Canceled Attack");
+   }
+
+
 }
 
 // |||||||||||||||||||||||||||||||||| Selection end
