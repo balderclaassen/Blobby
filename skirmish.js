@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", EventListeners);
 function EventListeners()
 {
 var map = document.getElementById("map");
-map.addEventListener("click", MoveBlob, true);
+map.addEventListener("click", ClickInMap);
 map.addEventListener("contextmenu", UnSelectAll);
 }
 // |||||||||||||||||||||||||||||||||| EventListeners end
@@ -52,7 +52,7 @@ function LightModeOn()
 
 
 // |||||||||||||||||||||||||||||||||| Move Blobs begin
-function MoveBlob(event)
+function ClickInMap(event)
 {
     var LowNestedDiv = event.target;
     var HighNestedDiv = this;
@@ -84,6 +84,18 @@ function MoveBlob(event)
         }
     }
 
+    // && Player === "P1" |AKA If Player is P1
+    else if (LowNestedDiv.classList.contains("Red")) {
+        // LowNestedDiv.classList.add("Selected");
+        console.log("Doing Nothing");
+    }
+
+    // && Player === "P1" |AKA If Player is P1
+    else if (LowNestedDiv.classList.contains("Blue", "Blob")) {
+        //AttackBlob code.
+        console.log("Attacked");
+    }
+}
 // |||||||||||||||||||||||||||||||||| Move Blobs end
 
 
