@@ -95,6 +95,25 @@ body {
     flex-grow: 1;
 }
 
+#SelectAllRed {
+    order: 4;
+    flex-grow: 1;
+}
+
+#SelectAllBlue {
+    order: 5;
+    flex-grow: 1;
+}
+
+#UnSelectAllRed {
+    order: 6;
+    flex-grow: 1;
+}
+
+#UnSelectAllBlue {
+    order: 7;
+    flex-grow: 1;
+}
 
 
 /*Buttons theming begin*/

@@ -79,6 +79,37 @@ function Select(div)
 {
     div.classList.add("Selected");
 }
+
+function SelectAllRedBlobs()
+{
+    var RedBlobs = document.getElementsByClassName("Red Blob");
+    for (var i = 0; i < RedBlobs.length; i++) {
+        RedBlobs[i].classList.add("Selected");
+    }
+}
+
+function SelectAllBlueBlobs()
+{
+    var BlueBlobs = document.getElementsByClassName("Blue Blob");
+    for (var i = 0; i < BlueBlobs.length; i++) {
+        BlueBlobs[i].classList.add("Selected");
+    }
+}
+
+function UnSelectAllRedBlobs() {
+    var RedBlobs = document.getElementsByClassName("Selected Red Blob");
+    for (var i = 0; i < RedBlobs.length;) {
+    RedBlobs[i].classList.remove("Selected");
+    }
+}
+
+function UnSelectAllBlueBlobs() {
+    var BlueBlobs = document.getElementsByClassName("Selected Blue Blob");
+    for (var i = 0; i < BlueBlobs.length;) {
+    BlueBlobs[i].classList.remove("Selected");
+    }
+}
+
 // |||||||||||||||||||||||||||||||||| Selection end
 
 
