@@ -54,22 +54,35 @@ function LightModeOn()
 // |||||||||||||||||||||||||||||||||| Move Blobs begin
 function MoveBlob(event)
 {
-var coardinateX = event.offsetX + "px";
-var coardinateY = event.offsetY + "px";
-// debugging
-console.log(coardinateX);
-var SelectedToBeMovedRed = document.getElementsByClassName("SelectedP1");
-for (var i = 0; i < SelectedToBeMovedRed.length; i++) {
-    SelectedToBeMovedRed[i].style.left = coardinateX;
-    SelectedToBeMovedRed[i].style.top = coardinateY;
-    SelectedToBeMovedRed[i].classList.remove("SelectedP1");
-}
-var SelectedToBeMovedBlue = document.getElementsByClassName("SelectedP2");
-for (var x = 0; x < SelectedToBeMovedBlue.length; x++) {
-    SelectedToBeMovedBlue[x].style.left = coardinateX;
-    SelectedToBeMovedBlue[x].style.top = coardinateY;
-    SelectedToBeMovedBlue[x].classList.remove("SelectedP2");
-}
+    var LowNestedDiv = event.target;
+    var HighNestedDiv = this;
+    console.log (this);
+    console.log (event.target);
+    // console.log(event);
+
+    if (LowNestedDiv === HighNestedDiv) {
+        var coardinateX = Math.max(event.offsetX -10, 1) + "px";
+        var coardinateY = Math.max(event.offsetY -10, 1) + "px";
+        console.log(coardinateX);
+        console.log(coardinateY);
+
+        var SelectedToBeMovedRed = document.getElementsByClassName("Selected Blob Red");
+        console.log(SelectedToBeMovedRed);
+        for (var i = 0; i < SelectedToBeMovedRed.length; i++) {
+            SelectedToBeMovedRed[i].style.left = coardinateX;
+            SelectedToBeMovedRed[i].style.top = coardinateY;
+            SelectedToBeMovedRed[i].classList.remove("Selected");
+            return;
+        }
+
+        var SelectedToBeMovedBlue = document.getElementsByClassName("Selected Blob Blue");
+        for (var x = 0; x < SelectedToBeMovedBlue.length; x++) {
+            SelectedToBeMovedBlue[x].style.left = coardinateX;
+            SelectedToBeMovedBlue[x].style.top = coardinateY;
+            SelectedToBeMovedBlue[x].classList.remove("Selected");
+            return;
+        }
+    }
 
 // |||||||||||||||||||||||||||||||||| Move Blobs end
 
