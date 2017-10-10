@@ -66,6 +66,7 @@ body {
     overflow: hidden;
 }
 
+
 #DarkMode1Button {
     order: 1;
     flex-grow: 1;
@@ -95,6 +96,7 @@ body {
     flex-grow: 1;
 }
 
+
 #SelectAllButtonP1 {
     order: 4;
     flex-grow: 1;
@@ -114,6 +116,7 @@ body {
     order: 7;
     flex-grow: 1;
 }
+
 
 #DevModeOnButton {
     order: 8;
@@ -149,6 +152,7 @@ body {
     display: none;
 }
 
+
 .DevModeOn #DevModeOnButton {
     display: none;
 }
@@ -162,9 +166,12 @@ body {
 
 
 /* |||||||||||||||||||||||||||||||||| Blobs begin*/
-.Spawner {
-    height: 80px;
-    width: 80px;
+.P1 {
+    background: #f00;
+}
+
+.P2 {
+    background: #00F;
 }
 
 .Building {
@@ -173,18 +180,15 @@ body {
     box-sizing: content-box;
 }
 
+.Spawner {
+    height: 80px;
+    width: 80px;
+}
+
 .Blob {
     border-radius: 50%;
     position: absolute;
     box-sizing: content-box;
-}
-
-.P2 {
-    background: #00F;
-}
-
-.P1 {
-    background: #f00;
 }
 
 .SmallBlob {
@@ -274,6 +278,16 @@ body {
     left: 85%;
 }
 
+#P2Blob7 {
+    top: 27%;
+    left: 37%;
+}
+
+#P2Blob8 {
+    top: 67%;
+    left: 78%;
+}
+
 /*Blobs theming begin*/
 .LightMode .Blob:hover,
 .LightMode .Blob.Selected {
@@ -289,6 +303,7 @@ body {
 .DarkMode2 .Blob.Selected {
     border: 1.5px solid #000;
 }
+
 
 .LightMode .Building:hover,
 .LightMode .Building.Selected {
