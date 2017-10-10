@@ -76,10 +76,20 @@ function ClickInMap(event)
     // console.log(event);
 
     if (LowNestedDiv === HighNestedDiv) {
-        var coardinateY = Math.max(event.offsetY -10, 1) + "px";
-        var coardinateX = Math.max(event.offsetX -10, 1) + "px";
+        var coardinateY = Math.max(event.offsetY -10, 1);
+        var coardinateX = Math.max(event.offsetX -10, 1);
+        console.log(coardinateX);
+        var map = document.getElementById("map");
+        var mapheight = window.getComputedStyle(map).getPropertyValue("height");
+        var mapwidth = window.getComputedStyle(map).getPropertyValue("width");
+        mapheight = parseFloat(mapheight, 10);
+        mapwidth = parseFloat(mapwidth, 10);
+        console.log(mapwidth);
+        coardinateY = ((coardinateY/mapheight)*100) + "%";
+        coardinateX = ((coardinateX/mapwidth)*100) + "%";
         console.log(coardinateY);
         console.log(coardinateX);
+
 
         var SelectedToBeMovedRed = document.getElementsByClassName("Selected Blob Red");
         console.log(SelectedToBeMovedRed);
