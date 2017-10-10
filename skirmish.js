@@ -47,6 +47,21 @@ function LightModeOn()
     document.body.classList.remove("DarkMode2");
     document.body.classList.add("LightMode");
 }
+
+function DevModeActivate()
+{
+    var map = document.getElementById("map");
+    map.removeEventListener("contextmenu", UnSelectAll);
+    document.body.classList.add("DevModeOn");
+}
+
+function DevModeDeactivate()
+{
+    var map = document.getElementById("map");
+    map.addEventListener("contextmenu", UnSelectAll);
+    document.body.classList.remove("DevModeOn");
+}
+
 // |||||||||||||||||||||||||||||||||| sidepanel end
 
 
