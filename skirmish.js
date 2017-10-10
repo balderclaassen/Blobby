@@ -61,24 +61,24 @@ function ClickInMap(event)
     // console.log(event);
 
     if (LowNestedDiv === HighNestedDiv) {
-        var coardinateX = Math.max(event.offsetX -10, 1) + "px";
         var coardinateY = Math.max(event.offsetY -10, 1) + "px";
-        console.log(coardinateX);
+        var coardinateX = Math.max(event.offsetX -10, 1) + "px";
         console.log(coardinateY);
+        console.log(coardinateX);
 
         var SelectedToBeMovedRed = document.getElementsByClassName("Selected Blob Red");
         console.log(SelectedToBeMovedRed);
         for (var i = 0; i < SelectedToBeMovedRed.length; i++) {
-            SelectedToBeMovedRed[i].style.left = coardinateX;
             SelectedToBeMovedRed[i].style.top = coardinateY;
+            SelectedToBeMovedRed[i].style.left = coardinateX;
             SelectedToBeMovedRed[i].classList.remove("Selected");
             return;
         }
 
         var SelectedToBeMovedBlue = document.getElementsByClassName("Selected Blob Blue");
         for (var x = 0; x < SelectedToBeMovedBlue.length; x++) {
-            SelectedToBeMovedBlue[x].style.left = coardinateX;
             SelectedToBeMovedBlue[x].style.top = coardinateY;
+            SelectedToBeMovedBlue[x].style.left = coardinateX;
             SelectedToBeMovedBlue[x].classList.remove("Selected");
             return;
         }
