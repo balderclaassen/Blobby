@@ -71,21 +71,18 @@ body {
     order: 1;
     flex-grow: 1;
     display: none;
-    /*display: none;*/
 }
 
 #DarkMode2Button {
     order: 1;
     flex-grow: 1;
     display: none;
-    /*display: none;*/
 }
 
 #LightModeButton {
     order: 1;
     flex-grow: 1;
     display: none;
-    /*display: none;*/
 }
 
 
@@ -137,25 +134,13 @@ body {
 .LightMode #DarkMode1Button {
     display: block;
 }
-.DarkMode1 #DarkMode1Button,
-.DarkMode2 #DarkMode1Button {
-    display: none;
-}
 
 .DarkMode1 #DarkMode2Button {
     display: block;
 }
-.DarkMode2 #DarkMode2Button,
-.LightMode #DarkMode2Button {
-    display: none;
-}
 
 .DarkMode2 #LightModeButton {
     display: block;
-}
-.LightMode #LightModeButton,
-.DarkMode1 #LightModeButton {
-    display: none;
 }
 
 
