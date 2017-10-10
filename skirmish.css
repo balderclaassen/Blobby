@@ -66,66 +66,58 @@ body {
     overflow: hidden;
 }
 
+#Buttons button {
+    flex-grow: 1;
+}
 
 #DarkMode1Button {
     order: 1;
-    flex-grow: 1;
     display: none;
 }
 
 #DarkMode2Button {
     order: 1;
-    flex-grow: 1;
     display: none;
 }
 
 #LightModeButton {
     order: 1;
-    flex-grow: 1;
     display: none;
 }
 
 
 #SpawnButtonP1 {
     order: 2;
-    flex-grow: 1;
 }
 
 #SpawnButtonP2 {
     order: 3;
-    flex-grow: 1;
 }
 
 
 #SelectAllButtonP1 {
     order: 4;
-    flex-grow: 1;
 }
 
 #SelectAllButtonP2 {
     order: 5;
-    flex-grow: 1;
 }
 
 #UnSelectAllButtonP1 {
     order: 6;
-    flex-grow: 1;
 }
 
 #UnSelectAllButtonP2 {
     order: 7;
-    flex-grow: 1;
 }
 
 
 #DevModeOnButton {
     order: 8;
-    flex-grow: 1;
 }
 
 #DevModeOffButton {
     order: 8;
-    flex-grow: 1;
     display: none;
 }
 
