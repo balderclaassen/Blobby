@@ -48,14 +48,14 @@ function LightModeOn()
     document.body.classList.add("LightMode");
 }
 
-function DevModeActivate()
+function DevModeOn()
 {
     var map = document.getElementById("map");
     map.removeEventListener("contextmenu", UnSelectAll);
     document.body.classList.add("DevModeOn");
 }
 
-function DevModeDeactivate()
+function DevModeOff()
 {
     var map = document.getElementById("map");
     map.addEventListener("contextmenu", UnSelectAll);
@@ -131,7 +131,7 @@ function Select(div)
     div.classList.add("Selected");
 }
 
-function SelectAllRedBlobs()
+function SelectAllBlobsRed()
 {
     var RedBlobs = document.getElementsByClassName("Red Blob");
     for (var i = 0; i < RedBlobs.length; i++) {
@@ -139,7 +139,7 @@ function SelectAllRedBlobs()
     }
 }
 
-function SelectAllBlueBlobs()
+function SelectAllBlobsBlue()
 {
     var BlueBlobs = document.getElementsByClassName("Blue Blob");
     for (var i = 0; i < BlueBlobs.length; i++) {
@@ -147,14 +147,14 @@ function SelectAllBlueBlobs()
     }
 }
 
-function UnSelectAllRedBlobs() {
+function UnSelectAllBlobsRed() {
     var RedBlobs = document.getElementsByClassName("Selected Red Blob");
     for (var i = 0; i < RedBlobs.length;) {
     RedBlobs[i].classList.remove("Selected");
     }
 }
 
-function UnSelectAllBlueBlobs() {
+function UnSelectAllBlobsBlue() {
     var BlueBlobs = document.getElementsByClassName("Selected Blue Blob");
     for (var i = 0; i < BlueBlobs.length;) {
     BlueBlobs[i].classList.remove("Selected");
@@ -194,7 +194,7 @@ function UnSelectAll(event) {
 
 
 // |||||||||||||||||||||||||||||||||| Create/Spawn Blobs begin
-function CreateRedBlob()
+function CreateBlobRed()
 {
     var newdiv = document.createElement("div");
     var container = document.getElementById('RedBlobs');
@@ -210,7 +210,7 @@ function CreateRedBlob()
     console.log(newdivID);
 }
 
-function CreateBlueBlob()
+function CreateBlobBlue()
 {
     var newdiv = document.createElement("div");
     var container = document.getElementById('BlueBlobs');

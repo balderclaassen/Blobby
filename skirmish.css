@@ -85,42 +85,42 @@ body {
 }
 
 
-#SpawnRedButton {
+#SpawnButtonRed {
     order: 2;
     flex-grow: 1;
 }
 
-#SpawnBlueButton {
+#SpawnButtonBlue {
     order: 3;
     flex-grow: 1;
 }
 
-#SelectAllRed {
+#SelectAllButtonRed {
     order: 4;
     flex-grow: 1;
 }
 
-#SelectAllBlue {
+#SelectAllButtonBlue {
     order: 5;
     flex-grow: 1;
 }
 
-#UnSelectAllRed {
+#UnSelectAllButtonRed {
     order: 6;
     flex-grow: 1;
 }
 
-#UnSelectAllBlue {
+#UnSelectAllButtonBlue {
     order: 7;
     flex-grow: 1;
 }
 
-#DevModeActivate {
+#DevModeOnButton {
     order: 8;
     flex-grow: 1;
 }
 
-#DevModeDeactivate {
+#DevModeOffButton {
     order: 8;
     flex-grow: 1;
     display: none;
@@ -149,10 +149,10 @@ body {
     display: none;
 }
 
-.DevModeOn #DevModeActivate {
+.DevModeOn #DevModeOnButton {
     display: none;
 }
-.DevModeOn #DevModeDeactivate {
+.DevModeOn #DevModeOffButton {
     display: block;
 }
 /*Buttons theming end*/
