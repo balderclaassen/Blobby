@@ -14,6 +14,8 @@ function incrementP1()
 
 
 
+
+
 // |||||||||||||||||||||||||||||||||| EventListeners begin
 document.addEventListener("DOMContentLoaded", EventListeners);
 
@@ -24,6 +26,8 @@ map.addEventListener("click", ClickInMap);
 map.addEventListener("contextmenu", UnSelectAll);
 }
 // |||||||||||||||||||||||||||||||||| EventListeners end
+
+
 
 
 
@@ -63,6 +67,8 @@ function DevModeOff()
 }
 
 // |||||||||||||||||||||||||||||||||| sidepanel end
+
+
 
 
 
@@ -122,6 +128,8 @@ function ClickInMap(event)
     }
 }
 // |||||||||||||||||||||||||||||||||| Move Blobs end
+
+
 
 
 
@@ -190,6 +198,8 @@ function UnSelectAll(event) {
 }
 
 // |||||||||||||||||||||||||||||||||| Selection end
+
+
 
 
 

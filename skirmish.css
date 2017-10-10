@@ -10,6 +10,7 @@ body {
     margin: 0; /*Unsetting UserAgentStyles margin of 8px*/
 }
 
+
 /* |||||||||||||||||||||||||||||||||| Screen begin*/
 #sidepanel {
     height: 120%;
@@ -54,6 +55,7 @@ body {
 }
 /*Screen theming end*/
 /* |||||||||||||||||||||||||||||||||| Screen end*/
+
 
 
 
@@ -144,6 +146,7 @@ body {
 }
 /*Buttons theming end*/
 /* |||||||||||||||||||||||||||||||||| Buttons end*/
+
 
 
 
