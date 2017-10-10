@@ -1,14 +1,14 @@
 // |||||||||||||||||||||||||||||||||| Functions used by other functions begin
 // count +1 on every run for Blob ID's.
-var nRed = 2;
-var nBlue = 2;
-function incrementBlue()
+var nP1 = 2;
+var nP2 = 2;
+function incrementP2()
 {
-    return ++nBlue;
+    return ++nP2;
 }
-function incrementRed()
+function incrementP1()
 {
-    return ++nRed;
+    return ++nP1;
 }
 // |||||||||||||||||||||||||||||||||| Functions used by other functions end
 
@@ -91,32 +91,32 @@ function ClickInMap(event)
         console.log(coardinateX);
 
 
-        var SelectedToBeMovedRed = document.getElementsByClassName("Selected Blob Red");
-        console.log(SelectedToBeMovedRed);
-        for (var i = 0; i < SelectedToBeMovedRed.length; i++) {
-            SelectedToBeMovedRed[i].style.top = coardinateY;
-            SelectedToBeMovedRed[i].style.left = coardinateX;
-            SelectedToBeMovedRed[i].classList.remove("Selected");
+        var SelectedToBeMovedP1 = document.getElementsByClassName("Selected Blob P1");
+        console.log(SelectedToBeMovedP1);
+        for (var i = 0; i < SelectedToBeMovedP1.length; i++) {
+            SelectedToBeMovedP1[i].style.top = coardinateY;
+            SelectedToBeMovedP1[i].style.left = coardinateX;
+            SelectedToBeMovedP1[i].classList.remove("Selected");
             return;
         }
 
-        var SelectedToBeMovedBlue = document.getElementsByClassName("Selected Blob Blue");
-        for (var x = 0; x < SelectedToBeMovedBlue.length; x++) {
-            SelectedToBeMovedBlue[x].style.top = coardinateY;
-            SelectedToBeMovedBlue[x].style.left = coardinateX;
-            SelectedToBeMovedBlue[x].classList.remove("Selected");
+        var SelectedToBeMovedP2 = document.getElementsByClassName("Selected Blob P2");
+        for (var x = 0; x < SelectedToBeMovedP2.length; x++) {
+            SelectedToBeMovedP2[x].style.top = coardinateY;
+            SelectedToBeMovedP2[x].style.left = coardinateX;
+            SelectedToBeMovedP2[x].classList.remove("Selected");
             return;
         }
     }
 
     // && Player === "P1" |AKA If Player is P1
-    else if (LowNestedDiv.classList.contains("Red")) {
+    else if (LowNestedDiv.classList.contains("P1")) {
         // LowNestedDiv.classList.add("Selected");
         console.log("Doing Nothing");
     }
 
     // && Player === "P1" |AKA If Player is P1
-    else if (LowNestedDiv.classList.contains("Blue", "Blob")) {
+    else if (LowNestedDiv.classList.contains("P2", "Blob")) {
         //AttackBlob code.
         console.log("Attacked");
     }
@@ -131,33 +131,33 @@ function Select(div)
     div.classList.add("Selected");
 }
 
-function SelectAllBlobsRed()
+function SelectAllBlobsP1()
 {
-    var RedBlobs = document.getElementsByClassName("Red Blob");
-    for (var i = 0; i < RedBlobs.length; i++) {
-        RedBlobs[i].classList.add("Selected");
+    var P1Blobs = document.getElementsByClassName("P1 Blob");
+    for (var i = 0; i < P1Blobs.length; i++) {
+        P1Blobs[i].classList.add("Selected");
     }
 }
 
-function SelectAllBlobsBlue()
+function SelectAllBlobsP2()
 {
-    var BlueBlobs = document.getElementsByClassName("Blue Blob");
-    for (var i = 0; i < BlueBlobs.length; i++) {
-        BlueBlobs[i].classList.add("Selected");
+    var P2Blobs = document.getElementsByClassName("P2 Blob");
+    for (var i = 0; i < P2Blobs.length; i++) {
+        P2Blobs[i].classList.add("Selected");
     }
 }
 
-function UnSelectAllBlobsRed() {
-    var RedBlobs = document.getElementsByClassName("Selected Red Blob");
-    for (var i = 0; i < RedBlobs.length;) {
-    RedBlobs[i].classList.remove("Selected");
+function UnSelectAllBlobsP1() {
+    var P1Blobs = document.getElementsByClassName("Selected P1 Blob");
+    for (var i = 0; i < P1Blobs.length;) {
+    P1Blobs[i].classList.remove("Selected");
     }
 }
 
-function UnSelectAllBlobsBlue() {
-    var BlueBlobs = document.getElementsByClassName("Selected Blue Blob");
-    for (var i = 0; i < BlueBlobs.length;) {
-    BlueBlobs[i].classList.remove("Selected");
+function UnSelectAllBlobsP2() {
+    var P2Blobs = document.getElementsByClassName("Selected P2 Blob");
+    for (var i = 0; i < P2Blobs.length;) {
+    P2Blobs[i].classList.remove("Selected");
     }
 }
 
@@ -175,13 +175,13 @@ function UnSelectAll(event) {
    }
 
 // && Player === "P1" |AKA If Player is P1
-   else if (LowNestedDiv.classList.contains("Red")) {
+   else if (LowNestedDiv.classList.contains("P1")) {
        LowNestedDiv.classList.remove("Selected");
        console.log("Unselected a Blob");
    }
 
 // && Player === "P1" |AKA If Player is P1
-   else if (LowNestedDiv.classList.contains("Blue")) {
+   else if (LowNestedDiv.classList.contains("P2")) {
        //Cancel attack/move command |AKA stop blob moving.
        console.log("Canceled Attack");
    }
@@ -194,33 +194,33 @@ function UnSelectAll(event) {
 
 
 // |||||||||||||||||||||||||||||||||| Create/Spawn Blobs begin
-function CreateBlobRed()
+function CreateBlobP1()
 {
     var newdiv = document.createElement("div");
-    var container = document.getElementById('RedBlobs');
-    var newdivID = "RedBlob" + incrementRed();
+    var container = document.getElementById('P1Blobs');
+    var newdivID = "P1Blob" + incrementP1();
     container.appendChild(newdiv);
     newdiv.setAttribute("id", newdivID);
     //Polyfill IE11 below. IE doesn't support multiple arguments for classList.add/.remove
     newdiv.classList.add("Blob");
     newdiv.classList.add("SmallBlob");
-    newdiv.classList.add("Red");
+    newdiv.classList.add("P1");
     newdiv.setAttribute("onclick", "Select(this)");
     //debugging
     console.log(newdivID);
 }
 
-function CreateBlobBlue()
+function CreateBlobP2()
 {
     var newdiv = document.createElement("div");
-    var container = document.getElementById('BlueBlobs');
-    var newdivID = "BlueBlob" + incrementBlue();
+    var container = document.getElementById('P2Blobs');
+    var newdivID = "P2Blob" + incrementP2();
     container.appendChild(newdiv);
     newdiv.setAttribute("id", newdivID);
     //Polyfill IE11 below. IE doesn't support multiple arguments for classList.add/.remove
     newdiv.classList.add("Blob");
     newdiv.classList.add("SmallBlob");
-    newdiv.classList.add("Blue");
+    newdiv.classList.add("P2");
     newdiv.setAttribute("onclick", "Select(this)");
     //debugging
     console.log(newdivID);

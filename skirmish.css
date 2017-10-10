@@ -85,32 +85,32 @@ body {
 }
 
 
-#SpawnButtonRed {
+#SpawnButtonP1 {
     order: 2;
     flex-grow: 1;
 }
 
-#SpawnButtonBlue {
+#SpawnButtonP2 {
     order: 3;
     flex-grow: 1;
 }
 
-#SelectAllButtonRed {
+#SelectAllButtonP1 {
     order: 4;
     flex-grow: 1;
 }
 
-#SelectAllButtonBlue {
+#SelectAllButtonP2 {
     order: 5;
     flex-grow: 1;
 }
 
-#UnSelectAllButtonRed {
+#UnSelectAllButtonP1 {
     order: 6;
     flex-grow: 1;
 }
 
-#UnSelectAllButtonBlue {
+#UnSelectAllButtonP2 {
     order: 7;
     flex-grow: 1;
 }
@@ -179,11 +179,11 @@ body {
     box-sizing: content-box;
 }
 
-.Blue {
+.P2 {
     background: #00F;
 }
 
-.Red {
+.P1 {
     background: #f00;
 }
 
@@ -194,82 +194,82 @@ body {
 }
 
 
-#RedSpawner {
+#P1Spawner {
     top: 15%;
     left: 15%;
 }
 
-#RedBlob1 {
+#P1Blob1 {
     top: 4%;
     left: 3%;
 }
 
-#RedBlob2 {
+#P1Blob2 {
     top: 20%;
     left: 3%;
 }
 
-#RedBlob3 {
+#P1Blob3 {
     top: 55%;
     left: 45%;
 }
 
-#RedBlob4 {
+#P1Blob4 {
     top: 50%;
     left: 55%;
 }
 
-#RedBlob5 {
+#P1Blob5 {
     top: 40%;
     left: 45%;
 }
 
-#RedBlob6 {
+#P1Blob6 {
     top: 70%;
     left: 65%;
 }
 
-#RedBlob7 {
+#P1Blob7 {
     top: 50%;
     left: 75%;
 }
 
-#RedBlob8 {
+#P1Blob8 {
     top: 35%;
     left: 85%;
 }
 
-#BlueSpawner {
+#P2Spawner {
     top: 85%;
     left: 85%;
 }
 
-#BlueBlob1 {
+#P2Blob1 {
     top: 96%;
     left: 97%;
 }
 
-#BlueBlob2 {
+#P2Blob2 {
     top: 45%;
     left: 55%;
 }
 
-#BlueBlob3 {
+#P2Blob3 {
     top: 80%;
     left: 75%;
 }
 
-#BlueBlob4 {
+#P2Blob4 {
     top: 15%;
     left: 65%;
 }
 
-#BlueBlob5 {
+#P2Blob5 {
     top: 65%;
     left: 20%;
 }
 
-#BlueBlob6 {
+#P2Blob6 {
     top: 70%;
     left: 85%;
 }

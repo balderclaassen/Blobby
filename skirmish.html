@@ -27,12 +27,12 @@
             <button id="DarkMode1Button" onclick="DarkMode1On()">DarkMode</button>
             <button id="DarkMode2Button" onclick="DarkMode2On()">DarkMode2</button>
             <button id="LightModeButton" onclick="LightModeOn()">LightMode</button>
-            <button id="SpawnButtonRed" onclick="CreateBlobRed()">(R)Spawn</button>
-            <button id="SpawnButtonBlue" onclick="CreateBlobBlue()">(B)Spawn</button>
-            <button id="SelectAllButtonRed" onclick="SelectAllBlobsRed()">(R)SelectAllBlobs</button>
-            <button id="SelectAllButtonBlue" onclick="SelectAllBlobsBlue()">(B)SelectAllBlobs</button>
-            <button id="UnSelectAllButtonRed" onclick="UnSelectAllBlobsRed()">(R)UnSelectAllBlobs</button>
-            <button id="UnSelectAllButtonBlue" onclick="UnSelectAllBlobsBlue()">(B)UnSelectAllBlobs</button>
+            <button id="SpawnButtonP1" onclick="CreateBlobP1()">(P1)Spawn</button>
+            <button id="SpawnButtonP2" onclick="CreateBlobP2()">(P2)Spawn</button>
+            <button id="SelectAllButtonP1" onclick="SelectAllBlobsP1()">(P1)SelectAllBlobs</button>
+            <button id="SelectAllButtonP2" onclick="SelectAllBlobsP2()">(P2)SelectAllBlobs</button>
+            <button id="UnSelectAllButtonP1" onclick="UnSelectAllBlobsP1()">(P1)UnSelectAllBlobs</button>
+            <button id="UnSelectAllButtonP2" onclick="UnSelectAllBlobsP2()">(P2)UnSelectAllBlobs</button>
             <button id="DevModeOnButton" onclick="DevModeOn()">DevModeOn</button>
             <button id="DevModeOffButton" onclick="DevModeOff()">DevModeOff</button>
         </div>
@@ -46,23 +46,23 @@
     <div id="map">
 
 
-        <div id="RedBlobs">
-            <div id="RedBlob1" class="Blob SmallBlob Red" onclick="Select(this)"></div>
-            <div id="RedBlob2" class="Blob SmallBlob Red" onclick="Select(this)"></div>
+        <div id="P1Blobs">
+            <div id="P1Blob1" class="Blob SmallBlob P1" onclick="Select(this)"></div>
+            <div id="P1Blob2" class="Blob SmallBlob P1" onclick="Select(this)"></div>
         </div>
 
-        <div id="RedBuildings">
-            <div id="RedSpawner" class="Building Red Spawner" onclick="Select(this)"></div>
+        <div id="P1Buildings">
+            <div id="P1Spawner" class="Building P1 Spawner" onclick="Select(this)"></div>
         </div>
 
 
-        <div id="BlueBlobs">
-            <div id="BlueBlob1" class="Blob SmallBlob Blue" onclick="Select(this)"></div>
-            <div id="BlueBlob2" class="Blob SmallBlob Blue" onclick="Select(this)"></div>
+        <div id="P2Blobs">
+            <div id="P2Blob1" class="Blob SmallBlob P2" onclick="Select(this)"></div>
+            <div id="P2Blob2" class="Blob SmallBlob P2" onclick="Select(this)"></div>
         </div>
 
-        <div id="BlueBuildings">
-            <div id="BlueSpawner" class="Building Blue Spawner" onclick="Select(this)"></div>
+        <div id="P2Buildings">
+            <div id="P2Spawner" class="Building P2 Spawner" onclick="Select(this)"></div>
         </div>
 
 
