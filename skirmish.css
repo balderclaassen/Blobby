@@ -199,93 +199,93 @@ body {
 
 
 #P1Spawner {
-    top: 15%;
-    left: 15%;
+    top: calc(15% - 40px);
+    left: calc(15% - 40px);
 }
 
 #P1Blob1 {
-    top: 4%;
-    left: 3%;
+    top: calc(4% - 10px);
+    left: calc(3% - 10px);
 }
 
 #P1Blob2 {
-    top: 20%;
-    left: 3%;
+    top: calc(20% - 10px);
+    left: calc(3% - 10px);
 }
 
 #P1Blob3 {
-    top: 55%;
-    left: 45%;
+    top: calc(55% - 10px);
+    left: calc(45% - 10px);
 }
 
 #P1Blob4 {
-    top: 50%;
-    left: 55%;
+    top: calc(50% - 10px);
+    left: calc(55% - 10px);
 }
 
 #P1Blob5 {
-    top: 40%;
-    left: 45%;
+    top: calc(40% - 10px);
+    left: calc(45% - 10px);
 }
 
 #P1Blob6 {
-    top: 70%;
-    left: 65%;
+    top: calc(70% - 10px);
+    left: calc(65% - 10px);
 }
 
 #P1Blob7 {
-    top: 50%;
-    left: 75%;
+    top: calc(50% - 10px);
+    left: calc(75% - 10px);
 }
 
 #P1Blob8 {
-    top: 35%;
-    left: 85%;
+    top: calc(35% - 10px);
+    left: calc(85% - 10px);
 }
 
 #P2Spawner {
-    top: 85%;
-    left: 85%;
+    top: calc(85% - 40px);
+    left: calc(85% - 40px);
 }
 
 #P2Blob1 {
-    top: 96%;
-    left: 97%;
+    top: calc(96% - 10px);
+    left: calc(97% - 10px);
 }
 
 #P2Blob2 {
-    top: 45%;
-    left: 55%;
+    top: calc(45% - 10px);
+    left: calc(55% - 10px);
 }
 
 #P2Blob3 {
-    top: 80%;
-    left: 75%;
+    top: calc(80% - 10px);
+    left: calc(75% - 10px);
 }
 
 #P2Blob4 {
-    top: 15%;
-    left: 65%;
+    top: calc(15% - 10px);
+    left: calc(65% - 10px);
 }
 
 #P2Blob5 {
-    top: 65%;
-    left: 20%;
+    top: calc(65% - 10px);
+    left: calc(20% - 10px);
 }
 
 #P2Blob6 {
-    top: 70%;
+    top: calc(0%; - 10px)
     left: 85%;
 }
 
 #P2Blob7 {
-    top: 27%;
-    left: 37%;
+    top: calc(27% - 10px);
+    left: calc(37% - 10px);
 }
 
 #P2Blob8 {
-    top: 67%;
-    left: 78%;
+    top: calc(67% - 10px);
+    left: calc(78% - 10px);
 }
 
 /*Blobs theming begin*/
