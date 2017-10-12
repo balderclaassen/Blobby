@@ -20,6 +20,7 @@ body {
     left: 0%;
     border-right: 1px solid #000;
     box-sizing: border-box;
+    z-index: 1;
 }
 
 #map {
@@ -28,6 +29,7 @@ body {
     max-width: calc(100% - 80px);
     position: absolute;
     right: 0%;
+    z-index: 1;
 }
 
 
@@ -164,6 +166,7 @@ body {
     border-radius: 50%;
     position: absolute;
     box-sizing: content-box;
+    z-index: 5;
 }
 
 .Spawner {
@@ -175,12 +178,14 @@ body {
     border-radius: 50%;
     position: absolute;
     box-sizing: content-box;
+    z-index: 15;
 }
 
 .SmallBlob {
     height: 20px;
     width: 20px;
     transition: left 2s, right 2s, top 2s, bottom 2s linear;
+    z-index: 25;
 }
 
 
