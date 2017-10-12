@@ -23,7 +23,7 @@ function EventListeners()
 {
 var map = document.getElementById("map");
 map.addEventListener("click", ClickInMap);
-map.addEventListener("contextmenu", UnSelectAll);
+map.addEventListener("contextmenu", SecondaryClick);
 }
 // |||||||||||||||||||||||||||||||||| EventListeners end
 
@@ -55,14 +55,14 @@ function LightModeOn()
 function DevModeOn()
 {
     var map = document.getElementById("map");
-    map.removeEventListener("contextmenu", UnSelectAll);
+    map.removeEventListener("contextmenu", SecondaryClick);
     document.body.classList.add("DevModeOn");
 }
 
 function DevModeOff()
 {
     var map = document.getElementById("map");
-    map.addEventListener("contextmenu", UnSelectAll);
+    map.addEventListener("contextmenu", SecondaryClick);
     document.body.classList.remove("DevModeOn");
 }
 
@@ -133,6 +133,38 @@ function ClickInMap(event)
 
 
 
+// |||||||||||||||||||||||||||||||||| ClickEvents begin
+function SecondaryClick(event) {
+    var LowNestedDiv = event.target;
+    var HighNestedDiv = this;
+   event.preventDefault();
+
+   if (LowNestedDiv === HighNestedDiv)
+   {
+       var SelectedBlobs = document.getElementsByClassName("Selected");
+       for (var i = 0; i < SelectedBlobs.length;) {
+           SelectedBlobs[i].classList.remove("Selected");
+       }
+   }
+
+// && Player === "P1" |AKA If Player is P1
+   else if (LowNestedDiv.classList.contains("P1")) {
+       LowNestedDiv.classList.remove("Selected");
+       console.log("Unselected a Blob");
+   }
+
+// && Player === "P1" |AKA If Player is P1
+   else if (LowNestedDiv.classList.contains("P2")) {
+       //Cancel attack/move command |AKA stop blob moving.
+       console.log("Canceled Attack");
+   }
+}
+// |||||||||||||||||||||||||||||||||| ClickEvents end
+
+
+
+
+
 // |||||||||||||||||||||||||||||||||| Selection begin
 function Select(div)
 {
@@ -168,35 +200,6 @@ function UnSelectAllBlobsP2() {
     P2Blobs[i].classList.remove("Selected");
     }
 }
-
-function UnSelectAll(event) {
-    var LowNestedDiv = event.target;
-    var HighNestedDiv = this;
-   event.preventDefault();
-
-   if (LowNestedDiv === HighNestedDiv)
-   {
-       var SelectedBlobs = document.getElementsByClassName("Selected");
-       for (var i = 0; i < SelectedBlobs.length;) {
-           SelectedBlobs[i].classList.remove("Selected");
-       }
-   }
-
-// && Player === "P1" |AKA If Player is P1
-   else if (LowNestedDiv.classList.contains("P1")) {
-       LowNestedDiv.classList.remove("Selected");
-       console.log("Unselected a Blob");
-   }
-
-// && Player === "P1" |AKA If Player is P1
-   else if (LowNestedDiv.classList.contains("P2")) {
-       //Cancel attack/move command |AKA stop blob moving.
-       console.log("Canceled Attack");
-   }
-
-
-}
-
 // |||||||||||||||||||||||||||||||||| Selection end
 
 
