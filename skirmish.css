@@ -138,10 +138,10 @@ body {
 }
 
 
-.DevModeOn #DevModeOnButton {
+.DevMode #DevModeOnButton {
     display: none;
 }
-.DevModeOn #DevModeOffButton {
+.DevMode #DevModeOffButton {
     display: block;
 }
 /*Buttons theming end*/

@@ -56,14 +56,14 @@ function DevModeOn()
 {
     var map = document.getElementById("map");
     map.removeEventListener("contextmenu", SecondaryClick);
-    document.body.classList.add("DevModeOn");
+    document.body.classList.add("DevMode");
 }
 
 function DevModeOff()
 {
     var map = document.getElementById("map");
     map.addEventListener("contextmenu", SecondaryClick);
-    document.body.classList.remove("DevModeOn");
+    document.body.classList.remove("DevMode");
 }
 
 // |||||||||||||||||||||||||||||||||| sidepanel end
