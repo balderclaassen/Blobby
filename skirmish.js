@@ -194,6 +194,7 @@ function ClickInMap(event)
 
 
 // |||||||||||||||||||||||||||||||||| ClickEvents begin
+// && Player === "P1" |AKA If Player is P1
 function SecondaryClick(event) {
     var LowNestedDiv = event.target;
     var HighNestedDiv = this;
@@ -210,16 +211,10 @@ function SecondaryClick(event) {
        }
    }
 
-// && Player === "P1" |AKA If Player is P1
-   else if (LowNestedDiv.classList.contains("P1")) {
+   else if (LowNestedDiv.classList.contains("P1") || LowNestedDiv.classList.contains("P2") && DevModeIsOn)
+   {
        LowNestedDiv.classList.remove("Selected");
        console.log("Unselected a Blob");
-   }
-
-// && Player === "P1" |AKA If Player is P1
-   else if (LowNestedDiv.classList.contains("P2")) {
-       //Cancel attack/move command |AKA stop blob moving.
-       console.log("Canceled Attack");
    }
 }
 // |||||||||||||||||||||||||||||||||| ClickEvents end
