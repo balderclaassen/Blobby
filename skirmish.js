@@ -206,14 +206,24 @@ function ClickInMap(event)
 
     else if (LowNestedDiv.classList.contains("P1", "Blob") && DevModeIsOn)
     {
+        LowNestedDiv.classList.add("Selected");
+        console.log("P1 Blob Selected or Attacked");
         GetTargetCoordinates(1, true);
         MoveBlobsP2(true);
     }
 
     else if (LowNestedDiv.classList.contains("P2") && DevModeIsOn)
     {
+        LowNestedDiv.classList.add("Selected");
+        console.log("P2 Blob Selected or Attacked");
         GetTargetCoordinates(1, true);
         MoveBlobsP1(true);
+    }
+
+    else if (LowNestedDiv.classList.contains("P1"))
+    {
+        LowNestedDiv.classList.add("Selected");
+        console.log("P1 Blob Selected");
     }
 
     else if (LowNestedDiv.classList.contains("P2", "Blob"))
@@ -261,11 +271,6 @@ function SecondaryClick(event) {
 
 
 // |||||||||||||||||||||||||||||||||| Selection begin
-function Select(div)
-{
-    div.classList.add("Selected");
-}
-
 function SelectAllBlobsP1()
 {
     var P1Blobs = document.getElementsByClassName("P1 Blob");
@@ -313,7 +318,6 @@ function CreateBlobP1()
     newdiv.classList.add("Blob");
     newdiv.classList.add("SmallBlob");
     newdiv.classList.add("P1");
-    newdiv.setAttribute("onclick", "Select(this)");
     //debugging
     console.log(newdivID);
 }
@@ -329,7 +333,6 @@ function CreateBlobP2()
     newdiv.classList.add("Blob");
     newdiv.classList.add("SmallBlob");
     newdiv.classList.add("P2");
-    newdiv.setAttribute("onclick", "Select(this)");
     //debugging
     console.log(newdivID);
 }
