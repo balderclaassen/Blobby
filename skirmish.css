@@ -283,8 +283,8 @@ body {
 }
 
 #P2Blob6 {
-    top: calc(0%; - 10px)
-    left: 85%;
+    top: calc(60% - 10px);
+    left: calc(85% - 10px);
 }
 
 #P2Blob7 {
