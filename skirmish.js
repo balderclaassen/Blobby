@@ -1,14 +1,15 @@
-// |||||||||||||||||||||||||||||||||| Functions used by other functions begin
+// |||||||||||||||||||||||||||||||||| Functions used by other functions + Variable declarations begin
 // count +1 on every run for Blob ID's.
-var nP1 = 2;
-var nP2 = 2;
-function incrementP2()
-{
-    return ++nP2;
-}
+var p1BlobCount = 2;
+var P2BlobCount = 2;
 function incrementP1()
 {
-    return ++nP1;
+    return ++P1BlobCount;
+}
+
+function incrementP2()
+{
+    return ++P2BlobCount;
 }
 
 
@@ -56,7 +57,7 @@ function DarkMode1On()
 
 function DarkMode2On()
 {
-    //DarkMode Chrome(defaultUbuntuGnome)
+    //DarkMode Chrome(GKT3, UbuntuGnome default)
     document.body.classList.remove("DarkMode1");
     document.body.classList.add("DarkMode2");
 }
