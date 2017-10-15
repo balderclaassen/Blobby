@@ -70,8 +70,6 @@ function LightModeOn()
 
 function DevModeOn()
 {
-    var map = document.getElementById("map");
-    map.removeEventListener("contextmenu", SecondaryClick);
     DevModeIsOn = true;
     document.body.classList.add("DevMode");
     ContextMenuShownChecker(true);
@@ -81,8 +79,6 @@ function DevModeOn()
 
 function DevModeOff()
 {
-    var map = document.getElementById("map");
-    map.addEventListener("contextmenu", SecondaryClick);
     DevModeIsOn = false;
     document.body.classList.remove("DevMode");
     ContextMenuShown = false;
@@ -200,12 +196,15 @@ function ClickInMap(event)
 function SecondaryClick(event) {
     var LowNestedDiv = event.target;
     var HighNestedDiv = this;
-   event.preventDefault();
+    if(ContextMenuShown===false){
+        event.preventDefault();
+    } else {return;}
 
    if (LowNestedDiv === HighNestedDiv)
    {
        var SelectedBlobs = document.getElementsByClassName("Selected");
-       for (var i = 0; i < SelectedBlobs.length;) {
+       for (var i = 0; i < SelectedBlobs.length;)
+       {
            SelectedBlobs[i].classList.remove("Selected");
        }
    }
