@@ -21,9 +21,9 @@ document.addEventListener("DOMContentLoaded", EventListeners);
 
 function EventListeners()
 {
-var map = document.getElementById("map");
-map.addEventListener("click", ClickInMap);
-map.addEventListener("contextmenu", SecondaryClick);
+    var map = document.getElementById("map");
+    map.addEventListener("click", ClickInMap);
+    map.addEventListener("contextmenu", SecondaryClick);
 }
 // |||||||||||||||||||||||||||||||||| EventListeners end
 
