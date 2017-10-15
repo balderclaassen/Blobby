@@ -10,7 +10,19 @@ function incrementP1()
 {
     return ++nP1;
 }
-// |||||||||||||||||||||||||||||||||| Functions used by other functions end
+
+
+
+
+var DevModeIsOn = false;
+
+var ContextMenuShownAtDefault = true;
+var PromptOnRefreshAtDefault = true;
+
+var RemainSelected = false;
+var ContextMenuShown = false;
+var PromptOnRefresh = true;
+// |||||||||||||||||||||||||||||||||| Functions used by other functions + Variable declarations end
 
 
 
@@ -24,6 +36,9 @@ function EventListeners()
     var map = document.getElementById("map");
     map.addEventListener("click", ClickInMap);
     map.addEventListener("contextmenu", SecondaryClick);
+
+    if (DevModeIsOn) {DevModeOn();}
+
 }
 // |||||||||||||||||||||||||||||||||| EventListeners end
 
@@ -56,14 +71,61 @@ function DevModeOn()
 {
     var map = document.getElementById("map");
     map.removeEventListener("contextmenu", SecondaryClick);
+    DevModeIsOn = true;
     document.body.classList.add("DevMode");
+    ContextMenuShownChecker(true);
+    PromptOnRefreshChecker(true);
+    RemainSelectedChecker();
 }
 
 function DevModeOff()
 {
     var map = document.getElementById("map");
     map.addEventListener("contextmenu", SecondaryClick);
+    DevModeIsOn = false;
     document.body.classList.remove("DevMode");
+    ContextMenuShown = false;
+    PromptOnRefresh = true;
+    RemainSelected = false;
+}
+
+function RemainSelectedChecker() {
+    console.log(RemainSelected);
+
+    var checkbox = document.getElementById("RemainSelectedCheckbox");
+
+    if(checkbox.checked){RemainSelected=true;}
+    else if(!checkbox.checked){RemainSelected=false;}
+
+    console.log(RemainSelected);
+}
+
+function ContextMenuShownChecker(ViaDevModeButton)
+{
+    var checkbox = document.getElementById("ContextMenuShownCheckbox");
+
+    if(ContextMenuShownAtDefault) {ContextMenuShownAtDefault = false; if(ViaDevModeButton) {checkbox.checked = true;} }
+
+    if(checkbox.checked){ContextMenuShown=true;}
+    else if(!checkbox.checked){ContextMenuShown=false;}
+
+    console.log(ContextMenuShownAtDefault + "Defaults");
+    console.log(ContextMenuShown + "Shown");
+    console.log(checkbox.checked + "Checked");
+}
+
+function PromptOnRefreshChecker(ViaDevModeButton)
+{
+    var checkbox = document.getElementById("PromptOnRefreshCheckbox");
+
+    if(PromptOnRefreshAtDefault) {PromptOnRefreshAtDefault = false; if(ViaDevModeButton) {checkbox.checked = false;} }
+
+    if(checkbox.checked){PromptOnRefresh=true;}
+    else if(!checkbox.checked){PromptOnRefresh=false;}
+
+    console.log(PromptOnRefreshAtDefault + "Defaults");
+    console.log(PromptOnRefresh + "Shown");
+    console.log(checkbox.checked + "Checked");
 }
 
 // |||||||||||||||||||||||||||||||||| sidepanel end

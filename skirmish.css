@@ -125,6 +125,21 @@ body {
     display: none;
 }
 
+#RemainSelectedCheckboxContainer {
+    order: 9;
+    display: none;
+}
+
+#ContextMenuShownCheckboxContainer {
+    order: 10;
+    display: none;
+}
+
+#PromptOnRefreshCheckboxContainer {
+    order: 11;
+    display: none;
+}
+
 
 /*Buttons theming begin*/
 .LightMode #DarkMode1Button {
@@ -139,11 +154,14 @@ body {
     display: block;
 }
 
-
 .DevMode #DevModeOnButton {
     display: none;
 }
-.DevMode #DevModeOffButton {
+
+.DevMode #DevModeOffButton,
+.DevMode #RemainSelectedCheckboxContainer,
+.DevMode #ContextMenuShownCheckboxContainer,
+.DevMode #PromptOnRefreshCheckboxContainer {
     display: block;
 }
 /*Buttons theming end*/
