@@ -73,9 +73,7 @@ function DevModeOn()
 {
     DevModeIsOn = true;
     document.body.classList.add("DevMode");
-    ContextMenuShownChecker(true);
-    PromptOnRefreshChecker(true);
-    RemainSelectedChecker();
+    CheckboxCheckers();
 }
 
 function DevModeOff()
@@ -126,6 +124,11 @@ function PromptOnRefreshChecker(ViaDevModeButton)
     console.log(checkbox.checked + "Checked");
 }
 
+function CheckboxCheckers() {
+    ContextMenuShownChecker(true);
+    PromptOnRefreshChecker(true);
+    RemainSelectedChecker();
+}
 // |||||||||||||||||||||||||||||||||| sidepanel end
 
 
