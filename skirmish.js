@@ -40,6 +40,7 @@ function EventListeners()
 
     if (DevModeIsOn) {DevModeOn();}
 
+    window.addEventListener("beforeunload", function (event) {if(PromptOnRefresh) {event.returnValue="\o/"; return "\o/";} });
 }
 // |||||||||||||||||||||||||||||||||| EventListeners end
 
