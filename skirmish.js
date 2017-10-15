@@ -133,59 +133,96 @@ function PromptOnRefreshChecker(ViaDevModeButton)
 
 
 // |||||||||||||||||||||||||||||||||| Move Blobs begin
+// && Player === "P1" |AKA If Player is P1
 function ClickInMap(event)
 {
     var LowNestedDiv = event.target;
     var HighNestedDiv = this;
-    console.log (this);
-    console.log (event.target);
-    // console.log(event);
+    console.log(this);
+    console.log(event.target);
+    console.log(event);
+    var TargetCoordinateY;
+    var TargetCoordinateX;
+    var UnitSizeOffset;
 
-    if (LowNestedDiv === HighNestedDiv) {
-        var coardinateY = Math.max(event.offsetY -10, 1);
-        var coardinateX = Math.max(event.offsetX -10, 1);
-        console.log(coardinateX);
+
+    function GetTargetCoordinates(UnitSizeOffset, Attacking)
+    {
         var map = document.getElementById("map");
-        var mapheight = window.getComputedStyle(map).getPropertyValue("height");
-        var mapwidth = window.getComputedStyle(map).getPropertyValue("width");
-        mapheight = parseFloat(mapheight, 10);
-        mapwidth = parseFloat(mapwidth, 10);
-        console.log(mapwidth);
-        coardinateY = ((coardinateY/mapheight)*100) + "%";
-        coardinateX = ((coardinateX/mapwidth)*100) + "%";
-        console.log(coardinateY);
-        console.log(coardinateX);
+        var sidepanel = document.getElementById("sidepanel");
+        var mapheight = parseFloat(window.getComputedStyle(map).getPropertyValue("height"), 10);
+        var mapwidth = parseFloat(window.getComputedStyle(map).getPropertyValue("width"), 10);
+        var sidepanelwidth = parseFloat(window.getComputedStyle(sidepanel).getPropertyValue("width"), 10);
+
+        TargetCoordinateY = Math.max(event.pageY -UnitSizeOffset, 1);
+        TargetCoordinateX = Math.max((event.pageX-sidepanelwidth) -UnitSizeOffset, 1);
+
+        TargetCoordinateY = ((TargetCoordinateY/mapheight)*100) + "%";
+        TargetCoordinateX = ((TargetCoordinateX/mapwidth)*100) + "%";
+
+        console.log(mapheight);
+        console.log(TargetCoordinateY);
+        console.log(TargetCoordinateX);
+    }
 
 
-        var SelectedToBeMovedP1 = document.getElementsByClassName("Selected Blob P1");
-        console.log(SelectedToBeMovedP1);
-        for (var i = 0; i < SelectedToBeMovedP1.length; i++) {
-            SelectedToBeMovedP1[i].style.top = coardinateY;
-            SelectedToBeMovedP1[i].style.left = coardinateX;
-            SelectedToBeMovedP1[i].classList.remove("Selected");
+    function MoveBlobsP1(Attacking)
+    {
+        var BlobsSelectedToBeMovedP1 = document.getElementsByClassName("Selected Blob P1");
+        console.log(BlobsSelectedToBeMovedP1);
+        for (var i = 0; i < BlobsSelectedToBeMovedP1.length; i++)
+        {
+            BlobsSelectedToBeMovedP1[i].style.top = TargetCoordinateY;
+            BlobsSelectedToBeMovedP1[i].style.left = TargetCoordinateX;
+            if(RemainSelected === false){ BlobsSelectedToBeMovedP1[i].classList.remove("Selected"); }
+            if(DevModeIsOn){LowNestedDiv.classList.remove("Selected");}
             return;
         }
+    }
 
-        var SelectedToBeMovedP2 = document.getElementsByClassName("Selected Blob P2");
-        for (var x = 0; x < SelectedToBeMovedP2.length; x++) {
-            SelectedToBeMovedP2[x].style.top = coardinateY;
-            SelectedToBeMovedP2[x].style.left = coardinateX;
-            SelectedToBeMovedP2[x].classList.remove("Selected");
+
+    function MoveBlobsP2(Attacking)
+    {
+        var BlobsSelectedToBeMovedP2 = document.getElementsByClassName("Selected Blob P2");
+        for (var x = 0; x < BlobsSelectedToBeMovedP2.length; x++)
+        {
+            BlobsSelectedToBeMovedP2[x].style.top = TargetCoordinateY;
+            BlobsSelectedToBeMovedP2[x].style.left = TargetCoordinateX;
+            if(RemainSelected === false){ BlobsSelectedToBeMovedP2[x].classList.remove("Selected"); }
+            if(DevModeIsOn){LowNestedDiv.classList.remove("Selected");}
             return;
         }
     }
 
-    // && Player === "P1" |AKA If Player is P1
-    else if (LowNestedDiv.classList.contains("P1")) {
-        // LowNestedDiv.classList.add("Selected");
-        console.log("Doing Nothing");
+
+
+    if (LowNestedDiv === HighNestedDiv)
+    {
+        GetTargetCoordinates(10);
+        MoveBlobsP1();
+        if (DevModeIsOn){MoveBlobsP2();}
+        console.log("Blob Moved");
     }
 
-    // && Player === "P1" |AKA If Player is P1
-    else if (LowNestedDiv.classList.contains("P2", "Blob")) {
-        //AttackBlob code.
-        console.log("Attacked");
+    else if (LowNestedDiv.classList.contains("P1", "Blob") && DevModeIsOn)
+    {
+        GetTargetCoordinates(1, true);
+        MoveBlobsP2(true);
     }
+
+    else if (LowNestedDiv.classList.contains("P2") && DevModeIsOn)
+    {
+        GetTargetCoordinates(1, true);
+        MoveBlobsP1(true);
+    }
+
+    else if (LowNestedDiv.classList.contains("P2", "Blob"))
+    {
+        GetTargetCoordinates(1, true);
+        MoveBlobsP1(true);
+        console.log("P2 Blob Attacked");
+    }
+
 }
 // |||||||||||||||||||||||||||||||||| Move Blobs end
 
