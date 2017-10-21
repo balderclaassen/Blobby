@@ -17,6 +17,7 @@ function incrementP2()
 
 var DevModeIsOn = false;
 
+RemainSelectedAtDefault = true;
 var ContextMenuShownAtDefault = true;
 var PromptOnRefreshAtDefault = true;
 
@@ -85,10 +86,12 @@ function DevModeOff()
     RemainSelected = false;
 }
 
-function RemainSelectedChecker() {
+function RemainSelectedChecker(ViaDevModeButton) {
     console.log(RemainSelected);
 
     var checkbox = document.getElementById("RemainSelectedCheckbox");
+
+    if(RemainSelectedAtDefault) {RemainSelectedAtDefault = false; if(ViaDevModeButton) {checkbox.checked = false;} }
 
     if(checkbox.checked){RemainSelected=true;}
     else if(!checkbox.checked){RemainSelected=false;}
@@ -127,7 +130,7 @@ function PromptOnRefreshChecker(ViaDevModeButton)
 function CheckboxCheckers() {
     ContextMenuShownChecker(true);
     PromptOnRefreshChecker(true);
-    RemainSelectedChecker();
+    RemainSelectedChecker(true);
 }
 // |||||||||||||||||||||||||||||||||| sidepanel end
 
