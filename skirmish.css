@@ -330,3 +330,193 @@ body {
 }
 /*Blobs theming end*/
 /* |||||||||||||||||||||||||||||||||| Blobs end*/
+
+
+
+
+
+/* |||||||||||||||||||||||||||||||||| Resources begin*/
+.ResourcePile {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 100;
+    height: 160px;
+    width: 160px;
+    box-sizing: content-box;
+    border: 1px solid #000;
+}
+
+.Resource {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 101;
+    height: 20px;
+    width: 20px;
+    background-color: rgb(240, 240, 240);
+    border: 1px solid #000;
+    box-sizing: content-box;
+    display: inline-block;
+}
+
+
+#ResourcePileA {
+    top: calc(15% - 80px);
+    left: calc(30% - 80px);
+}
+
+#ResourcePileB {
+    top: calc(85% - 80px);
+    left: calc(70% - 80px);
+}
+
+
+.Resource1 {
+    top: calc(50% - 11px);
+    left: calc(50% - 11px);
+        z-index: 115;
+}
+
+.Resource2 {
+    top: calc(40% - 11px);
+    left: calc(50% - 11px);
+    z-index: 114;
+}
+
+.Resource3 {
+    top: calc(50% - 11px);
+    left: calc(60% - 11px);
+    z-index: 114;
+}
+
+.Resource4 {
+    top: calc(60% - 11px);
+    left: calc(50% - 11px);
+    z-index: 114;
+}
+
+.Resource5 {
+    top: calc(50% - 11px);
+    left: calc(40% - 11px);
+    z-index: 114;
+}
+
+.Resource6 {
+    top: calc(30% - 11px);
+    left: calc(50% - 11px);
+    z-index: 113;
+}
+
+.Resource7 {
+    top: calc(40% - 11px);
+    left: calc(60% - 11px);
+    z-index: 113;
+}
+
+.Resource8 {
+    top: calc(50% - 11px);
+    left: calc(70% - 11px);
+    z-index: 113;
+}
+
+.Resource9 {
+    top: calc(60% - 11px);
+    left: calc(60% - 11px);
+    z-index: 113;
+}
+
+.Resource10 {
+    top: calc(70% - 11px);
+    left: calc(50% - 11px);
+    z-index: 113;
+}
+
+.Resource11 {
+    top: calc(60% - 11px);
+    left: calc(40% - 11px);
+    z-index: 113;
+}
+
+.Resource12 {
+    top: calc(50% - 11px);
+    left: calc(30% - 11px);
+    z-index: 113;
+}
+
+.Resource13 {
+    top: calc(40% - 11px);
+    left: calc(40% - 11px);
+    z-index: 113;
+}
+
+.Resource14 {
+    top: calc(20% - 11px);
+    left: calc(50% - 11px);
+    z-index: 112;
+}
+
+.Resource15 {
+    top: calc(30% - 11px);
+    left: calc(60% - 11px);
+    z-index: 112;
+}
+
+.Resource16 {
+    top: calc(40% - 11px);
+    left: calc(70% - 11px);
+    z-index: 111;
+}
+
+.Resource17 {
+    top: calc(50% - 11px);
+    left: calc(80% - 11px);
+    z-index: 111;
+}
+
+.Resource18 {
+    top: calc(60% - 11px);
+    left: calc(70% - 11px);
+    z-index: 111;
+}
+
+.Resource19 {
+    top: calc(50% - 11px);
+    left: calc(20% - 11px);
+    z-index: 111;
+}
+
+.Resource20 {
+    top: calc(80% - 11px);
+    left: calc(50% - 11px);
+    z-index: 111;
+}
+
+.Resource21 {
+    top: calc(70% - 11px);
+    left: calc(40% - 11px);
+    z-index: 111;
+}
+
+.Resource22 {
+    top: calc(60% - 11px);
+    left: calc(30% - 11px);
+    z-index: 111;
+}
+
+.Resource23 {
+    top: calc(70% - 11px);
+    left: calc(60% - 11px);
+    z-index: 111;
+}
+
+.Resource24 {
+    top: calc(40% - 11px);
+    left: calc(30% - 11px);
+    z-index: 111;
+}
+
+.Resource25 {
+    top: calc(30% - 11px);
+    left: calc(40% - 11px);
+    z-index: 112;
+}
+/* |||||||||||||||||||||||||||||||||| Resources end*/

@@ -1,6 +1,6 @@
 // |||||||||||||||||||||||||||||||||| Functions used by other functions + Variable declarations begin
 // count +1 on every run for Blob ID's.
-var p1BlobCount = 2;
+var P1BlobCount = 2;
 var P2BlobCount = 2;
 function incrementP1()
 {
