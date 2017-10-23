@@ -173,11 +173,11 @@ body {
 
 /* |||||||||||||||||||||||||||||||||| Blobs begin*/
 .P1 {
-    background: #f00;
+    background: rgb(235, 0, 0);
 }
 
 .P2 {
-    background: #00F;
+    background: hsl(235, 85%, 35%);
 }
 
 .Building {
