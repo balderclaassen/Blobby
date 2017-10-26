@@ -209,7 +209,7 @@ function ClickInMap(event)
         console.log("Blob Moved");
     }
 
-    else if (LowNestedDiv.classList.contains("P1", "Blob") && DevModeIsOn)
+    else if (DevModeIsOn && ContainsClassAnd(LowNestedDiv, 2, "P1", "Blob"))
     {
         LowNestedDiv.classList.add("Selected");
         console.log("P1 Blob Selected or Attacked");
@@ -217,7 +217,7 @@ function ClickInMap(event)
         MoveBlobsP2(true);
     }
 
-    else if (LowNestedDiv.classList.contains("P2") && DevModeIsOn)
+    else if (DevModeIsOn && ContainsClassAnd(LowNestedDiv, 2, "P2", "Blob") )
     {
         LowNestedDiv.classList.add("Selected");
         console.log("P2 Blob Selected or Attacked");
@@ -263,7 +263,7 @@ function SecondaryClick(event) {
        }
    }
 
-   else if (LowNestedDiv.classList.contains("P1") || LowNestedDiv.classList.contains("P2") && DevModeIsOn)
+   else if (LowNestedDiv.classList.contains("P1") || DevModeIsOn && LowNestedDiv.classList.contains("P2"))
    {
        LowNestedDiv.classList.remove("Selected");
        console.log("Unselected a Blob");
