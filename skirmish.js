@@ -316,7 +316,7 @@ function UnSelectAllBlobsP2() {
 function CreateBlobP1()
 {
     var newdiv = document.createElement("div");
-    var container = document.getElementById('P1Blobs');
+    var container = document.getElementById("P1Blobs");
     var newdivID = "P1Blob" + incrementP1();
     container.appendChild(newdiv);
     newdiv.setAttribute("id", newdivID);
@@ -331,7 +331,7 @@ function CreateBlobP1()
 function CreateBlobP2()
 {
     var newdiv = document.createElement("div");
-    var container = document.getElementById('P2Blobs');
+    var container = document.getElementById("P2Blobs");
     var newdivID = "P2Blob" + incrementP2();
     container.appendChild(newdiv);
     newdiv.setAttribute("id", newdivID);
