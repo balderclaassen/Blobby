@@ -150,16 +150,15 @@ function ClickInMap(event)
     var TargetCoordinateY;
     var TargetCoordinateX;
     var UnitSizeOffset;
+    var map = document.getElementById("map");
+    var sidepanel = document.getElementById("sidepanel");
+    var mapheight = parseFloat(window.getComputedStyle(map).getPropertyValue("height"), 10);
+    var mapwidth = parseFloat(window.getComputedStyle(map).getPropertyValue("width"), 10);
+    var sidepanelwidth = parseFloat(window.getComputedStyle(sidepanel).getPropertyValue("width"), 10);
 
 
     function GetTargetCoordinates(UnitSizeOffset, Attacking)
     {
-        var map = document.getElementById("map");
-        var sidepanel = document.getElementById("sidepanel");
-        var mapheight = parseFloat(window.getComputedStyle(map).getPropertyValue("height"), 10);
-        var mapwidth = parseFloat(window.getComputedStyle(map).getPropertyValue("width"), 10);
-        var sidepanelwidth = parseFloat(window.getComputedStyle(sidepanel).getPropertyValue("width"), 10);
-
         TargetCoordinateY = Math.max(event.pageY -UnitSizeOffset, 1);
         TargetCoordinateX = Math.max((event.pageX-sidepanelwidth) -UnitSizeOffset, 1);
 
