@@ -12,6 +12,14 @@ function incrementP2()
     return ++P2BlobCount;
 }
 
+function ContainsClassAnd(target, classes, class1, class2, class3) {
+    if(classes === 2) {
+        return target.classList.contains(class1) && target.classList.contains(class2);
+    }
+    else if(classes === 3) {
+        return target.classList.contains(class1) && target.classList.contains(class2) && target.classList.contains(class3);
+    }
+}
 
 
 
@@ -225,13 +233,13 @@ function ClickInMap(event)
         MoveBlobsP1(true);
     }
 
-    else if (LowNestedDiv.classList.contains("P1"))
+    else if (ContainsClassAnd(LowNestedDiv, 2, "P1", "Blob"))
     {
         LowNestedDiv.classList.add("Selected");
         console.log("P1 Blob Selected");
     }
 
-    else if (LowNestedDiv.classList.contains("P2", "Blob"))
+    else if (ContainsClassAnd(LowNestedDiv, 2, "P2", "Blob"))
     {
         GetTargetCoordinates(1, true);
         MoveBlobsP1(true);
