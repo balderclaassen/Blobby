@@ -333,6 +333,19 @@ function ClickInMap(event)
         console.log("P2 Blob Attacked");
     }
 
+    else if (ContainsClassAnd(LowNestedDiv, "Refinery", "P1") && ([0] < document.getElementsByClassName("Selected SmallBlob P1").length))
+    {
+        MoveBlobsP1(false, true, false);
+
+        window.setTimeout(MoveBlobsP1, 2000, false, false, true);
+    }
+
+    else if (DevModeIsOn && ContainsClassAnd(LowNestedDiv, "Refinery", "P2") && ([0] < document.getElementsByClassName("Selected SmallBlob P2").length))
+    {
+        MoveBlobsP2(false, true, false);
+
+        window.setTimeout(MoveBlobsP2, 2000, false, false, true);
+    }
 }
 // |||||||||||||||||||||||||||||||||| Move Blobs end
 
