@@ -189,16 +189,17 @@ function ClickInMap(event)
     var BlobType;
     var BlobSizeWithBorder;
     var AttackingOffset;
+    var BlobToBeMoved;
 
+    var ResourcePile1Base;
+    var ResourcePile;
+    var ResourceSpot;
 
-    function GetTargetCoordinates(UnitSizeOffset, Attacking)
     GetMapAndSidepanelSizes();
     GetBlobType();
 
     function GetBlobType()
     {
-        TargetCoordinateY = Math.max(event.pageY -UnitSizeOffset, 1);
-        TargetCoordinateX = Math.max((event.pageX-sidepanelwidth) -UnitSizeOffset, 1);
         if (document.body.classList.contains("LightMode") && [0] < document.getElementsByClassName("Selected SmallBlob P1").length || DevModeIsOn && document.body.classList.contains("LightMode") && [0] < document.getElementsByClassName("Selected SmallBlob P2").length)
         { BlobType="SmallBlob"; BlobSizeWithBorder=22; UnitSizeOffset = 11; AttackingOffset= 11; }
 
@@ -206,39 +207,81 @@ function ClickInMap(event)
         { BlobType = "SmallBlob"; BlobSizeWithBorder=24; UnitSizeOffset = 12; AttackingOffset= 12; }
     }
 
+    function CoordinateToPercentage() {
         TargetCoordinateY = ((TargetCoordinateY/mapheight)*100) + "%";
         TargetCoordinateX = ((TargetCoordinateX/mapwidth)*100) + "%";
+    }
 
-        console.log(mapheight);
+    function GetTargetCoordinates(Attacking)
+    {
+        if(Attacking)
+        {
+            TargetCoordinateY = GetBCRect(LowNestedDiv, "Y");
+            TargetCoordinateX = GetBCRect(LowNestedDiv, "X");
+            GetDirection(BlobToBeMoved, LowNestedDiv);
+        }
+        else {
+            TargetCoordinateY = event.pageY - UnitSizeOffset;
+            TargetCoordinateX = event.pageX - UnitSizeOffset - sidepanelwidth;
+            DontFallOutOfMap();
+        }
+
+        console.log(mapwidth);
         console.log(TargetCoordinateY);
         console.log(TargetCoordinateX);
     }
 
 
-    function MoveBlobsP1(Attacking)
     {
-        var BlobsSelectedToBeMovedP1 = document.getElementsByClassName("Selected Blob P1");
+    function MoveBlobsP1(Attacking, RefineryClicked, ResourceCollection)
+    {
+        var BlobsSelectedToBeMovedP1;
+        if(ResourceCollection) {BlobsSelectedToBeMovedP1 = document.getElementsByClassName("ToBeDispatched Blob P1");}
+        else {BlobsSelectedToBeMovedP1 = document.getElementsByClassName("Selected Blob P1");}
         console.log(BlobsSelectedToBeMovedP1);
+
         for (var i = 0; i < BlobsSelectedToBeMovedP1.length; i++)
         {
-            BlobsSelectedToBeMovedP1[i].style.top = TargetCoordinateY;
-            BlobsSelectedToBeMovedP1[i].style.left = TargetCoordinateX;
-            if(RemainSelected === false){ BlobsSelectedToBeMovedP1[i].classList.remove("Selected"); }
-            if(DevModeIsOn){LowNestedDiv.classList.remove("Selected");}
+            BlobToBeMoved = BlobsSelectedToBeMovedP1[i];
+            else if(RefineryClicked) {GetTargetCoordinates(false);}
+            else if(ResourceCollection) {FindNearestResPile();}
+            else {GetTargetCoordinates(false);}
+
+            CoordinateToPercentage();
+            BlobToBeMoved.style.top = TargetCoordinateY;
+            BlobToBeMoved.style.left = TargetCoordinateX;
+
+            if (RefineryClicked) {BlobToBeMoved.classList.add("ToBeDispatched");}
+            if (RemainSelected === false) {BlobToBeMoved.classList.remove("Selected");}
+            if (ResourceCollection) {BlobToBeMoved.classList.remove("ToBeDispatched");}
+            if (DevModeIsOn) {LowNestedDiv.classList.remove("Selected");}
             return;
         }
     }
 
 
-    function MoveBlobsP2(Attacking)
+    function MoveBlobsP2(Attacking, RefineryClicked, ResourceCollection, AIAttack)
     {
-        var BlobsSelectedToBeMovedP2 = document.getElementsByClassName("Selected Blob P2");
-        for (var x = 0; x < BlobsSelectedToBeMovedP2.length; x++)
+        var BlobsSelectedToBeMovedP2;
+        if(ResourceCollection) {BlobsSelectedToBeMovedP2 = document.getElementsByClassName("ToBeDispatched Blob P2");}
+        else {BlobsSelectedToBeMovedP2 = document.getElementsByClassName("Selected Blob P2");}
+        console.log(BlobsSelectedToBeMovedP2);
+
+        for (var i = 0; i < BlobsSelectedToBeMovedP2.length; i++)
         {
-            BlobsSelectedToBeMovedP2[x].style.top = TargetCoordinateY;
-            BlobsSelectedToBeMovedP2[x].style.left = TargetCoordinateX;
-            if(RemainSelected === false){ BlobsSelectedToBeMovedP2[x].classList.remove("Selected"); }
-            if(DevModeIsOn){LowNestedDiv.classList.remove("Selected");}
+            BlobToBeMoved = BlobsSelectedToBeMovedP2[i];
+            else if(RefineryClicked) {GetTargetCoordinates(false);}
+            else if(ResourceCollection) {FindNearestResPile();}
+            else {GetTargetCoordinates(false);}
+
+            CoordinateToPercentage();
+            BlobToBeMoved.style.top = TargetCoordinateY;
+            BlobToBeMoved.style.left = TargetCoordinateX;
+
+            if (RefineryClicked) {BlobToBeMoved.classList.add("ToBeDispatched");}
+            if (RemainSelected === false) {BlobToBeMoved.classList.remove("Selected");}
+            if (ResourceCollection) {BlobToBeMoved.classList.remove("ToBeDispatched");}
+            if (DevModeIsOn) {LowNestedDiv.classList.remove("Selected");}
             return;
         }
     }
