@@ -474,13 +474,13 @@ function CreateBlobP1()
     var newdiv = document.createElement("div");
     var container = document.getElementById("P1Blobs");
     var newdivID = "P1Blob" + incrementP1();
+
     container.appendChild(newdiv);
     newdiv.setAttribute("id", newdivID);
     //Polyfill IE11 below. IE doesn't support multiple arguments for classList.add/.remove
     newdiv.classList.add("Blob");
     newdiv.classList.add("SmallBlob");
     newdiv.classList.add("P1");
-    //debugging
     console.log(newdivID);
 }
 
@@ -489,13 +489,13 @@ function CreateBlobP2()
     var newdiv = document.createElement("div");
     var container = document.getElementById("P2Blobs");
     var newdivID = "P2Blob" + incrementP2();
+    
     container.appendChild(newdiv);
     newdiv.setAttribute("id", newdivID);
     //Polyfill IE11 below. IE doesn't support multiple arguments for classList.add/.remove
     newdiv.classList.add("Blob");
     newdiv.classList.add("SmallBlob");
     newdiv.classList.add("P2");
-    //debugging
     console.log(newdivID);
 }
 // |||||||||||||||||||||||||||||||||| Create/Spawn Blobs end
