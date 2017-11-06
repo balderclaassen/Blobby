@@ -353,10 +353,11 @@ body {
     z-index: 101;
     height: 20px;
     width: 20px;
-    background-color: rgb(240, 240, 240);
+    background-color: rgb(230, 230, 230);
     border: 1px solid #000;
     box-sizing: content-box;
     display: inline-block;
+    transition: left 7s, right 7s, top 7s, bottom 7s linear;
 }
 
 
