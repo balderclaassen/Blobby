@@ -294,6 +294,26 @@ function ClickInMap(event)
         }
     }
 
+    function FindNearestResPile()
+    {
+        var ResourcePileA = document.getElementById("ResourcePileA");
+        var ResourcePileB = document.getElementById("ResourcePileB");
+        var Ref = event.target;
+
+        if (DistanceCalc(ResourcePileA, Ref) < DistanceCalc(ResourcePileB, Ref))
+        {
+            TargetCoordinateY = GetBCRect(ResourcePileA, "Y");
+            TargetCoordinateX = GetBCRect(ResourcePileA, "X");
+        }
+        else if (DistanceCalc(ResourcePileB, Ref) < DistanceCalc(ResourcePileA, Ref))
+        {
+            TargetCoordinateY = GetBCRect(ResourcePileB, "Y");
+            TargetCoordinateX = GetBCRect(ResourcePileB, "X");
+        }
+        console.log(TargetCoordinateY);
+    }
+
+
 
 
     if (LowNestedDiv === HighNestedDiv)
