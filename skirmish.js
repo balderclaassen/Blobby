@@ -241,6 +241,12 @@ function ClickInMap(event)
 
 
     {
+    function UpdateAttackCommand()
+    {
+        NewTargetY = TargetCoordinateY;
+        NewTargetX = TargetCoordinateX;
+    }
+
     function MoveBlobsP1(Attacking, RefineryClicked, ResourceCollection)
     {
         var BlobsSelectedToBeMovedP1;
