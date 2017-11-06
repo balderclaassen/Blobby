@@ -207,6 +207,9 @@ body {
     z-index: 25;
 }
 
+.SmallBlob.UnderAttack {
+    transition: left 2.2s, right 2.2s, top 2.2s, bottom 2.2s linear;
+}
 
 #P1Spawner {
     top: calc(15% - 40px);
