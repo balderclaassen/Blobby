@@ -253,7 +253,7 @@ function ClickInMap(event)
         console.log("Blob Moved");
     }
 
-    else if (DevModeIsOn && ContainsClassAnd(LowNestedDiv, 2, "P1", "Blob"))
+    else if (DevModeIsOn && ContainsClassAnd(LowNestedDiv, "P1", "Blob"))
     {
         LowNestedDiv.classList.add("Selected");
         console.log("P1 Blob Selected or Attacked");
@@ -261,7 +261,7 @@ function ClickInMap(event)
         MoveBlobsP2(true);
     }
 
-    else if (DevModeIsOn && ContainsClassAnd(LowNestedDiv, 2, "P2", "Blob") )
+    else if (DevModeIsOn && ContainsClassAnd(LowNestedDiv, "P2", "Blob") )
     {
         LowNestedDiv.classList.add("Selected");
         console.log("P2 Blob Selected or Attacked");
@@ -269,13 +269,13 @@ function ClickInMap(event)
         MoveBlobsP1(true);
     }
 
-    else if (ContainsClassAnd(LowNestedDiv, 2, "P1", "Blob"))
+    else if (ContainsClassAnd(LowNestedDiv, "P1", "Blob"))
     {
         LowNestedDiv.classList.add("Selected");
         console.log("P1 Blob Selected");
     }
 
-    else if (ContainsClassAnd(LowNestedDiv, 2, "P2", "Blob"))
+    else if (ContainsClassAnd(LowNestedDiv, "P2", "Blob"))
     {
         GetTargetCoordinates(1, true);
         MoveBlobsP1(true);
