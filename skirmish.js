@@ -207,6 +207,14 @@ function ClickInMap(event)
         { BlobType = "SmallBlob"; BlobSizeWithBorder=24; UnitSizeOffset = 12; AttackingOffset= 12; }
     }
 
+    function DontFallOutOfMap()
+    {
+        TargetCoordinateY = Math.min(TargetCoordinateY, mapheight - BlobSizeWithBorder);
+        TargetCoordinateX = Math.min(TargetCoordinateX, mapwidth - BlobSizeWithBorder);
+        TargetCoordinateY = Math.max(TargetCoordinateY, 1);
+        TargetCoordinateX = Math.max(TargetCoordinateX, 1);
+    }
+
     function CoordinateToPercentage() {
         TargetCoordinateY = ((TargetCoordinateY/mapheight)*100) + "%";
         TargetCoordinateX = ((TargetCoordinateX/mapwidth)*100) + "%";
