@@ -35,6 +35,20 @@ function ContainsClassAnd(target, class1, class2, class3) {
     }
 }
 
+function GetBCRect(element, axis)
+{
+    if (axis === "Y") {return element.getBoundingClientRect().top + window.pageYOffset;}
+    else if (axis === "X") {return element.getBoundingClientRect().left + window.pageXOffset - sidepanelwidth;}
+}
+
+function DistanceCalc(pointA, pointB)
+{
+    TopA = GetBCRect(pointA, "Y");
+    LeftA = GetBCRect(pointA, "X");
+    TopB = GetBCRect(pointB, "Y");
+    LeftB = GetBCRect(pointB, "X");
+    return Math.abs((TopA - TopB) + (LeftA - LeftB));
+}
 
 
 var DevModeIsOn = false;
