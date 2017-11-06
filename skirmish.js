@@ -39,7 +39,7 @@ function ContainsClassAnd(target, class1, class2, class3) {
 
 var DevModeIsOn = false;
 
-RemainSelectedAtDefault = true;
+var RemainSelectedAtDefault = true;
 var ContextMenuShownAtDefault = true;
 var PromptOnRefreshAtDefault = true;
 
