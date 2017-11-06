@@ -378,7 +378,7 @@ body {
 .Resource1 {
     top: calc(50% - 11px);
     left: calc(50% - 11px);
-        z-index: 115;
+    z-index: 115;
 }
 
 .Resource2 {
