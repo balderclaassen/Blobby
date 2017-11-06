@@ -1,4 +1,9 @@
 // |||||||||||||||||||||||||||||||||| Functions used by other functions + Variable declarations begin
+var map;
+var sidepanel;
+var mapheight;
+var mapwidth;
+var sidepanelwidth;
 // count +1 on every run for Blob ID's.
 var P1BlobCount = 2;
 var P2BlobCount = 2;
@@ -12,12 +17,21 @@ function incrementP2()
     return ++P2BlobCount;
 }
 
-function ContainsClassAnd(target, classes, class1, class2, class3) {
-    if(classes === 2) {
-        return target.classList.contains(class1) && target.classList.contains(class2);
-    }
-    else if(classes === 3) {
+function GetMapAndSidepanelSizes()
+{
+    map = document.getElementById("map");
+    sidepanel = document.getElementById("sidepanel");
+    mapheight = parseFloat(map.getBoundingClientRect().height, 10);
+    mapwidth = parseFloat(map.getBoundingClientRect().width, 10);
+    sidepanelwidth = parseFloat(sidepanel.getBoundingClientRect().width, 10);
+}
+
+function ContainsClassAnd(target, class1, class2, class3) {
+    if(class3) {
         return target.classList.contains(class1) && target.classList.contains(class2) && target.classList.contains(class3);
+    }
+    else {
+        return target.classList.contains(class1) && target.classList.contains(class2);
     }
 }
 
@@ -158,11 +172,6 @@ function ClickInMap(event)
     var TargetCoordinateY;
     var TargetCoordinateX;
     var UnitSizeOffset;
-    var map = document.getElementById("map");
-    var sidepanel = document.getElementById("sidepanel");
-    var mapheight = parseFloat(window.getComputedStyle(map).getPropertyValue("height"), 10);
-    var mapwidth = parseFloat(window.getComputedStyle(map).getPropertyValue("width"), 10);
-    var sidepanelwidth = parseFloat(window.getComputedStyle(sidepanel).getPropertyValue("width"), 10);
 
 
     function GetTargetCoordinates(UnitSizeOffset, Attacking)
