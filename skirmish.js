@@ -290,6 +290,9 @@ function ClickInMap(event)
             if (RemainSelected === false) {BlobToBeMoved.classList.remove("Selected");}
             if (ResourceCollection) {BlobToBeMoved.classList.remove("ToBeDispatched");}
             if (DevModeIsOn) {LowNestedDiv.classList.remove("Selected");}
+
+            if(Attacking) {console.log("P2 Blob Attacked"); Battle();} else {console.log("P2 Blob Moved");}
+
             return;
         }
     }
@@ -320,20 +323,17 @@ function ClickInMap(event)
     {
         MoveBlobsP1();
         if (DevModeIsOn){MoveBlobsP2();}
-        console.log("Blob Moved");
     }
 
     else if (DevModeIsOn && ContainsClassAnd(LowNestedDiv, "P1", "Blob"))
     {
         LowNestedDiv.classList.add("Selected");
-        console.log("P1 Blob Selected or Attacked");
         MoveBlobsP2(true);
     }
 
     else if (DevModeIsOn && ContainsClassAnd(LowNestedDiv, "P2", "Blob") )
     {
         LowNestedDiv.classList.add("Selected");
-        console.log("P2 Blob Selected or Attacked");
         MoveBlobsP1(true);
     }
 
@@ -346,7 +346,6 @@ function ClickInMap(event)
     else if (ContainsClassAnd(LowNestedDiv, "P2", "Blob"))
     {
         MoveBlobsP1(true);
-        console.log("P2 Blob Attacked");
     }
 
     else if (ContainsClassAnd(LowNestedDiv, "Refinery", "P1") && ([0] < document.getElementsByClassName("Selected SmallBlob P1").length))
