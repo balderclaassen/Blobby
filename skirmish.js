@@ -244,6 +244,10 @@ function ClickInMap(event)
     function MoveBlobsP1(Attacking, RefineryClicked, ResourceCollection)
     {
         var BlobsSelectedToBeMovedP1;
+        var BlobToBeMovedUnderAttack;
+        Attacker = "P1"; Attacked = "P2";
+
+
         if(ResourceCollection) {BlobsSelectedToBeMovedP1 = document.getElementsByClassName("ToBeDispatched Blob P1");}
         else {BlobsSelectedToBeMovedP1 = document.getElementsByClassName("Selected Blob P1");}
         console.log(BlobsSelectedToBeMovedP1);
@@ -251,6 +255,14 @@ function ClickInMap(event)
         for (var i = 0; i < BlobsSelectedToBeMovedP1.length; i++)
         {
             BlobToBeMoved = BlobsSelectedToBeMovedP1[i];
+            if(BlobToBeMoved.classList.contains("AttackMode")) {console.log("I can't move, I'm battling.");return;}
+            if(LowNestedDiv.classList.contains("AttackMode")) {console.log("Can't attack this blob, it's already battling.");return;}
+            if(BlobToBeMoved.classList.contains("UnderAttack")) {BlobToBeMovedUnderAttack = true;}
+            if(BlobToBeMoved.classList.contains("Attacking")) {BlobToBeMoved.classList.remove("Attacking");}
+
+            if (BlobToBeMovedUnderAttack && Attacking || BlobToBeMovedUnderAttack && RefineryClicked) {console.log("This Blob can't do that, its under attack."); return;}
+            else if (BlobToBeMovedUnderAttack) {BlobToBeMoved.classList.add("BlobUnderAttackMoved"); GetTargetCoordinates(false); UpdateAttackCommand();}
+            else if(Attacking) {GetTargetCoordinates(true);}
             else if(RefineryClicked) {GetTargetCoordinates(false);}
             else if(ResourceCollection) {FindNearestResPile();}
             else {GetTargetCoordinates(false);}
@@ -263,6 +275,10 @@ function ClickInMap(event)
             if (RemainSelected === false) {BlobToBeMoved.classList.remove("Selected");}
             if (ResourceCollection) {BlobToBeMoved.classList.remove("ToBeDispatched");}
             if (DevModeIsOn) {LowNestedDiv.classList.remove("Selected");}
+
+            if(Attacking) {console.log("P1 Blob Attacked"); Battle();}
+            else {console.log("P1 Blob Moved");}
+
             return;
         }
     }
@@ -271,6 +287,9 @@ function ClickInMap(event)
     function MoveBlobsP2(Attacking, RefineryClicked, ResourceCollection, AIAttack)
     {
         var BlobsSelectedToBeMovedP2;
+        var BlobToBeMovedUnderAttack;
+        Attacker = "P2"; Attacked = "P1";
+
         if(ResourceCollection) {BlobsSelectedToBeMovedP2 = document.getElementsByClassName("ToBeDispatched Blob P2");}
         else {BlobsSelectedToBeMovedP2 = document.getElementsByClassName("Selected Blob P2");}
         console.log(BlobsSelectedToBeMovedP2);
@@ -278,6 +297,15 @@ function ClickInMap(event)
         for (var i = 0; i < BlobsSelectedToBeMovedP2.length; i++)
         {
             BlobToBeMoved = BlobsSelectedToBeMovedP2[i];
+
+            if(BlobToBeMoved.classList.contains("AttackMode")) {console.log("I can't move, I'm battling.");return;}
+            if(LowNestedDiv.classList.contains("AttackMode")) {console.log("Can't attack this blob, it's already battling.");return;}
+            if(BlobToBeMoved.classList.contains("UnderAttack")) {BlobToBeMovedUnderAttack = true;}
+            if(BlobToBeMoved.classList.contains("Attacking")) {BlobToBeMoved.classList.remove("Attacking");}
+
+            else if (BlobToBeMovedUnderAttack && Attacking || BlobToBeMovedUnderAttack && RefineryClicked) {console.log("This Blob can't do that, its under attack."); return;}
+            else if (BlobToBeMovedUnderAttack) {BlobToBeMoved.classList.add("BlobUnderAttackMoved"); GetTargetCoordinates(false); UpdateAttackCommand();}
+            else if(Attacking) {GetTargetCoordinates(true);}
             else if(RefineryClicked) {GetTargetCoordinates(false);}
             else if(ResourceCollection) {FindNearestResPile();}
             else {GetTargetCoordinates(false);}
