@@ -370,6 +370,10 @@ body {
     left: calc(70% - 80px);
 }
 
+#ResourceA1Base,
+#ResourceB1Base {
+    visibility: hidden;
+}
 
 .Resource1 {
     top: calc(50% - 11px);
