@@ -189,6 +189,7 @@ function ClickInMap(event)
 
 
     function GetTargetCoordinates(UnitSizeOffset, Attacking)
+    GetMapAndSidepanelSizes();
     {
         TargetCoordinateY = Math.max(event.pageY -UnitSizeOffset, 1);
         TargetCoordinateX = Math.max((event.pageX-sidepanelwidth) -UnitSizeOffset, 1);
