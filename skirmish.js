@@ -186,13 +186,25 @@ function ClickInMap(event)
     var TargetCoordinateY;
     var TargetCoordinateX;
     var UnitSizeOffset;
+    var BlobType;
+    var BlobSizeWithBorder;
+    var AttackingOffset;
 
 
     function GetTargetCoordinates(UnitSizeOffset, Attacking)
     GetMapAndSidepanelSizes();
+    GetBlobType();
+
+    function GetBlobType()
     {
         TargetCoordinateY = Math.max(event.pageY -UnitSizeOffset, 1);
         TargetCoordinateX = Math.max((event.pageX-sidepanelwidth) -UnitSizeOffset, 1);
+        if (document.body.classList.contains("LightMode") && [0] < document.getElementsByClassName("Selected SmallBlob P1").length || DevModeIsOn && document.body.classList.contains("LightMode") && [0] < document.getElementsByClassName("Selected SmallBlob P2").length)
+        { BlobType="SmallBlob"; BlobSizeWithBorder=22; UnitSizeOffset = 11; AttackingOffset= 11; }
+
+        else if ([0] < document.getElementsByClassName("Selected SmallBlob P1").length || DevModeIsOn && [0] < document.getElementsByClassName("Selected SmallBlob P2").length)
+        { BlobType = "SmallBlob"; BlobSizeWithBorder=24; UnitSizeOffset = 12; AttackingOffset= 12; }
+    }
 
         TargetCoordinateY = ((TargetCoordinateY/mapheight)*100) + "%";
         TargetCoordinateX = ((TargetCoordinateX/mapwidth)*100) + "%";
