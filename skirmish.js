@@ -74,6 +74,7 @@ function EventListeners()
     var map = document.getElementById("map");
     map.addEventListener("click", ClickInMap);
     map.addEventListener("contextmenu", SecondaryClick);
+    window.addEventListener("keydown", KeyboardShortcuts);
 
     if (DevModeIsOn) {DevModeOn();}
 
@@ -479,6 +480,24 @@ function UnSelectAllBlobs() {
 
 
 
+// |||||||||||||||||||||||||||||||||| KeyboardShortcuts begin
+function KeyboardShortcuts(event)
+{
+    if (event.key === "a" && event.ctrlKey)
+    {
+        event.preventDefault();
+        SelectAllBlobsP1();
+    }
+
+    else if (event.key === "A" && event.ctrlKey && event.shiftKey)
+    {
+        event.preventDefault();
+        UnSelectAllBlobsP1();
+    }
+
+    else {return;}
+}
+// |||||||||||||||||||||||||||||||||| KeyboardShortcuts end
 // |||||||||||||||||||||||||||||||||| Create/Spawn Blobs begin
 function CreateBlobP1()
 {
