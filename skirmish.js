@@ -407,24 +407,27 @@ function ClickInMap(event)
 function SecondaryClick(event) {
     var LowNestedDiv = event.target;
     var HighNestedDiv = this;
-    if(ContextMenuShown===false){
-        event.preventDefault();
-    } else {return;}
+    if (ContextMenuShown===false) {event.preventDefault();} else {return;}
 
-   if (LowNestedDiv === HighNestedDiv)
-   {
-       var SelectedBlobs = document.getElementsByClassName("Selected");
-       for (var i = 0; i < SelectedBlobs.length;)
-       {
-           SelectedBlobs[i].classList.remove("Selected");
-       }
-   }
+    if (event.ctrlKey && DevModeIsOn)
+    {
+        if (LowNestedDiv === HighNestedDiv) {UnSelectAllBlobs();}
+        if (LowNestedDiv.classList.contains("P1")) {UnSelectAllBlobsP1();}
+        if (LowNestedDiv.classList.contains("P2")) {UnSelectAllBlobsP2();}
+    }
 
-   else if (LowNestedDiv.classList.contains("P1") || DevModeIsOn && LowNestedDiv.classList.contains("P2"))
-   {
-       LowNestedDiv.classList.remove("Selected");
-       console.log("Unselected a Blob");
-   }
+    else if (LowNestedDiv === HighNestedDiv)
+    {
+        UnSelectAllBlobsP1();
+    }
+
+    else if (LowNestedDiv.classList.contains("P1") || DevModeIsOn && LowNestedDiv.classList.contains("P2"))
+    {
+        LowNestedDiv.classList.remove("Selected");
+        console.log("Unselected a Blob");
+    }
+
+
 }
 // |||||||||||||||||||||||||||||||||| ClickEvents end
 
@@ -460,6 +463,14 @@ function UnSelectAllBlobsP2() {
     var P2Blobs = document.getElementsByClassName("Selected P2 Blob");
     for (var i = 0; i < P2Blobs.length;) {
     P2Blobs[i].classList.remove("Selected");
+    }
+}
+
+function UnSelectAllBlobs() {
+    var SelectedBlobs = document.getElementsByClassName("Selected Blob");
+    for (var i = 0; i < SelectedBlobs.length;)
+    {
+        SelectedBlobs[i].classList.remove("Selected");
     }
 }
 // |||||||||||||||||||||||||||||||||| Selection end
