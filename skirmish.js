@@ -283,7 +283,7 @@ function ClickInMap(event)
             if (ResourceCollection) {BlobToBeMoved.classList.remove("ToBeDispatched");}
             if (DevModeIsOn) {LowNestedDiv.classList.remove("Selected");}
 
-            if(Attacking) {console.log("P1 Blob Attacked"); Battle();}
+            if(Attacking) {console.log("P2 Blob Attacked"); Battle();}
             else {console.log("P1 Blob Moved");}
 
             return;
@@ -326,7 +326,7 @@ function ClickInMap(event)
             if (ResourceCollection) {BlobToBeMoved.classList.remove("ToBeDispatched");}
             if (DevModeIsOn) {LowNestedDiv.classList.remove("Selected");}
 
-            if(Attacking) {console.log("P2 Blob Attacked"); Battle();} else {console.log("P2 Blob Moved");}
+            if(Attacking) {console.log("P1 Blob Attacked"); Battle();} else {console.log("P2 Blob Moved");}
 
             return;
         }
@@ -396,6 +396,7 @@ function ClickInMap(event)
 
         window.setTimeout(MoveBlobsP2, 2000, false, false, true);
     }
+
 }
 // |||||||||||||||||||||||||||||||||| Move Blobs end
 
@@ -427,8 +428,6 @@ function SecondaryClick(event) {
         LowNestedDiv.classList.remove("Selected");
         console.log("Unselected a Blob");
     }
-
-
 }
 // |||||||||||||||||||||||||||||||||| ClickEvents end
 
@@ -498,6 +497,11 @@ function KeyboardShortcuts(event)
     else {return;}
 }
 // |||||||||||||||||||||||||||||||||| KeyboardShortcuts end
+
+
+
+
+
 // |||||||||||||||||||||||||||||||||| Create/Spawn Blobs begin
 function CreateBlobP1()
 {
@@ -519,7 +523,7 @@ function CreateBlobP2()
     var newdiv = document.createElement("div");
     var container = document.getElementById("P2Blobs");
     var newdivID = "P2Blob" + incrementP2();
-    
+
     container.appendChild(newdiv);
     newdiv.setAttribute("id", newdivID);
     //Polyfill IE11 below. IE doesn't support multiple arguments for classList.add/.remove
