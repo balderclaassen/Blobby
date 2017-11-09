@@ -218,14 +218,13 @@ function ClickInMap(event)
     var ResourceSpot;
 
     GetMapAndSidepanelSizes();
-    GetBlobType();
 
-    function GetBlobType()
+    function GetBlobType(Player)
     {
-        if (document.body.classList.contains("LightMode") && [0] < document.getElementsByClassName("Selected SmallBlob P1").length || DevModeIsOn && document.body.classList.contains("LightMode") && [0] < document.getElementsByClassName("Selected SmallBlob P2").length)
-        { BlobType="SmallBlob"; BlobSizeWithBorder=22; UnitSizeOffset = 11; AttackingOffset= 11; }
+        if (document.body.classList.contains("LightMode") && SomethingIsSelected("SmallBlob", Player))
+        { BlobType="SmallBlob"; BlobSizeWithBorder=22; UnitSizeOffset = 11; AttackingOffset= 11;}
 
-        else if ([0] < document.getElementsByClassName("Selected SmallBlob P1").length || DevModeIsOn && [0] < document.getElementsByClassName("Selected SmallBlob P2").length)
+        else if (SomethingIsSelected("SmallBlob", Player))
         { BlobType = "SmallBlob"; BlobSizeWithBorder=24; UnitSizeOffset = 12; AttackingOffset= 12; }
     }
 
@@ -274,7 +273,7 @@ function ClickInMap(event)
         var BlobsSelectedToBeMovedP1;
         var BlobToBeMovedUnderAttack;
         Attacker = "P1"; Attacked = "P2";
-
+        GetBlobType("P1");
 
         if(ResourceCollection) {BlobsSelectedToBeMovedP1 = document.getElementsByClassName("ToBeDispatched Blob P1");}
         else {BlobsSelectedToBeMovedP1 = document.getElementsByClassName("Selected Blob P1");}
@@ -317,6 +316,7 @@ function ClickInMap(event)
         var BlobsSelectedToBeMovedP2;
         var BlobToBeMovedUnderAttack;
         Attacker = "P2"; Attacked = "P1";
+        GetBlobType("P2");
 
         if(ResourceCollection) {BlobsSelectedToBeMovedP2 = document.getElementsByClassName("ToBeDispatched Blob P2");}
         else {BlobsSelectedToBeMovedP2 = document.getElementsByClassName("Selected Blob P2");}
