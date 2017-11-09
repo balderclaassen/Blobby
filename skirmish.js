@@ -27,12 +27,13 @@ function GetMapAndSidepanelSizes()
 }
 
 function ContainsClassAnd(target, class1, class2, class3) {
-    if(class3) {
+    if(target && class1 && class2 && class3) {
         return target.classList.contains(class1) && target.classList.contains(class2) && target.classList.contains(class3);
     }
-    else {
+    else if (target && class1 && class2) {
         return target.classList.contains(class1) && target.classList.contains(class2);
     }
+    else {console.log("Not all needed arguments supplied for ContainsClassAnd()");}
 }
 
 function GetBCRect(element, axis)
@@ -43,6 +44,8 @@ function GetBCRect(element, axis)
 
 function DistanceCalc(pointA, pointB)
 {
+    if (!pointA || !pointB) {console.log("Not all needed arguments supplied for DistanceCalc()"); return;}
+
     TopA = GetBCRect(pointA, "Y");
     LeftA = GetBCRect(pointA, "X");
     TopB = GetBCRect(pointB, "Y");
