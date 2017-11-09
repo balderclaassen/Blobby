@@ -50,6 +50,24 @@ function DistanceCalc(pointA, pointB)
     return Math.abs((TopA - TopB) + (LeftA - LeftB));
 }
 
+function SomethingIsSelected(BlobType, Player)
+{
+    if (Player && BlobType)
+    {
+        if ([0] < document.getElementsByClassName("Selected" + " " + Player + " " + BlobType).length)
+        {return true;}
+        else if ([1] > document.getElementsByClassName("Selected" + " " + Player + " " + BlobType).length)
+        {return false;}
+    }
+    else if (!Player && BlobType)
+    {
+        if ([0] < document.getElementsByClassName("Selected" + " " + BlobType).length)
+        {return true;}
+        else if ([1] > document.getElementsByClassName("Selected" + " " + BlobType).length)
+        {return false;}
+    }
+    else {console.log("No arguments supplied for SomethingIsSelected()");}
+}
 
 var DevModeIsOn = false;
 
