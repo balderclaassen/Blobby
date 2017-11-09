@@ -469,7 +469,9 @@ function UnSelectAllBlobsMatching(BlobType, Player)
 // |||||||||||||||||||||||||||||||||| KeyboardShortcuts begin
 function KeyboardShortcuts(event)
 {
-    if (event.key === "a" && event.ctrlKey)
+    if (event.key === "t") {if (SomethingIsSelected("SmallBlob", "P1")) {SelectAllBlobsMatching("SmallBlob", "P1");}}
+
+    else if (event.key === "a" && event.ctrlKey)
     {
         event.preventDefault();
         SelectAllBlobsMatching("Blob", "P1");
