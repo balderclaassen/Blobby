@@ -414,14 +414,14 @@ function SecondaryClick(event) {
 
     if (event.ctrlKey && DevModeIsOn)
     {
-        if (LowNestedDiv === HighNestedDiv) {UnSelectAllBlobs();}
-        if (LowNestedDiv.classList.contains("P1")) {UnSelectAllBlobsP1();}
-        if (LowNestedDiv.classList.contains("P2")) {UnSelectAllBlobsP2();}
+        if (LowNestedDiv === HighNestedDiv) {UnSelectAllBlobsMatching("Blob");}
+        if (LowNestedDiv.classList.contains("P1")) {UnSelectAllBlobsMatching("Blob", "P1");}
+        if (LowNestedDiv.classList.contains("P2")) {UnSelectAllBlobsMatching("Blob", "P2");}
     }
 
     else if (LowNestedDiv === HighNestedDiv)
     {
-        UnSelectAllBlobsP1();
+        UnSelectAllBlobsMatching("Blob", "P1");
     }
 
     else if (LowNestedDiv.classList.contains("P1") || DevModeIsOn && LowNestedDiv.classList.contains("P2"))
@@ -437,41 +437,27 @@ function SecondaryClick(event) {
 
 
 // |||||||||||||||||||||||||||||||||| Selection begin
-function SelectAllBlobsP1()
+function SelectAllBlobsMatching(BlobType, Player)
 {
-    var P1Blobs = document.getElementsByClassName("P1 Blob");
-    for (var i = 0; i < P1Blobs.length; i++) {
-        P1Blobs[i].classList.add("Selected");
+    var Blobs;
+    if (Player && BlobType) {Blobs = document.getElementsByClassName(Player + " " + BlobType);}
+    else if (!Player && BlobType) {Blobs = document.getElementsByClassName(BlobType);}
+    else {console.log("Not all needed arguments supplied for SelectAllBlobsMatching()"); return;}
+
+    for (var i = 0; i < Blobs.length; i++) {
+        Blobs[i].classList.add("Selected");
     }
 }
 
-function SelectAllBlobsP2()
+function UnSelectAllBlobsMatching(BlobType, Player)
 {
-    var P2Blobs = document.getElementsByClassName("P2 Blob");
-    for (var i = 0; i < P2Blobs.length; i++) {
-        P2Blobs[i].classList.add("Selected");
-    }
-}
+    var Blobs;
+    if (Player && BlobType) {Blobs = document.getElementsByClassName("Selected" + " " + Player + " " + BlobType);}
+    else if (!Player && BlobType) {Blobs = document.getElementsByClassName("Selected" + " " + BlobType);}
+    else {console.log("Not all needed arguments supplied for UnSelectAllBlobsMatching()"); return;}
 
-function UnSelectAllBlobsP1() {
-    var P1Blobs = document.getElementsByClassName("Selected P1 Blob");
-    for (var i = 0; i < P1Blobs.length;) {
-    P1Blobs[i].classList.remove("Selected");
-    }
-}
-
-function UnSelectAllBlobsP2() {
-    var P2Blobs = document.getElementsByClassName("Selected P2 Blob");
-    for (var i = 0; i < P2Blobs.length;) {
-    P2Blobs[i].classList.remove("Selected");
-    }
-}
-
-function UnSelectAllBlobs() {
-    var SelectedBlobs = document.getElementsByClassName("Selected Blob");
-    for (var i = 0; i < SelectedBlobs.length;)
-    {
-        SelectedBlobs[i].classList.remove("Selected");
+    for (var i = 0; i < Blobs.length;) {
+        Blobs[i].classList.remove("Selected");
     }
 }
 // |||||||||||||||||||||||||||||||||| Selection end
@@ -486,13 +472,13 @@ function KeyboardShortcuts(event)
     if (event.key === "a" && event.ctrlKey)
     {
         event.preventDefault();
-        SelectAllBlobsP1();
+        SelectAllBlobsMatching("Blob", "P1");
     }
 
     else if (event.key === "A" && event.ctrlKey && event.shiftKey)
     {
         event.preventDefault();
-        UnSelectAllBlobsP1();
+        UnSelectAllBlobsMatching("Blob", "P1");
     }
 
     else {return;}
