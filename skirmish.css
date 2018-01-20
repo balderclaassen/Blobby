@@ -199,6 +199,10 @@ body {
     z-index: 15;
 }
 
+.Blob:hover {
+    z-index: 26;
+}
+
 .SmallBlob {
     height: 20px;
     width: 20px;
