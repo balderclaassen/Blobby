@@ -241,6 +241,32 @@ function ClickInMap(event)
         TargetCoordinateX = Math.max(TargetCoordinateX, 1);
     }
 
+    function GetDirection(pointA, pointB, AttackUpdate)
+    {
+        var DifferenceTop;
+        var DifferenceLeft;
+
+        if(AttackUpdate)
+        {
+            DifferenceTop = GetBCRect(pointA, "Y") - NewTargetY;
+            DifferenceLeft = GetBCRect(pointA, "X") - NewTargetX;
+        }
+        else
+        {
+            DifferenceTop = GetBCRect(pointA, "Y") - GetBCRect(pointB, "Y");
+            DifferenceLeft = GetBCRect(pointA, "X") - GetBCRect(pointB, "X");
+        }
+
+        if(Math.abs(DifferenceTop) >= Math.abs(DifferenceLeft))
+        {
+            if(DifferenceTop < 0) {TargetCoordinateY = TargetCoordinateY - AttackingOffset;}
+            if(DifferenceTop > 0) {TargetCoordinateY = TargetCoordinateY + AttackingOffset;}
+        }
+        else if(Math.abs(DifferenceTop) < Math.abs(DifferenceLeft))
+        {
+            if(DifferenceLeft < 0) {TargetCoordinateX = TargetCoordinateX - AttackingOffset;}
+            if(DifferenceLeft > 0) {TargetCoordinateX = TargetCoordinateX + AttackingOffset;}
+        }
     }
 
     function GetTargetCoordinates(Attacking)
