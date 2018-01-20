@@ -221,10 +221,10 @@ function ClickInMap(event)
 
     function GetBlobType(Player)
     {
-        if (document.body.classList.contains("LightMode") && SomethingIsSelected("SmallBlob", Player))
+        if (document.body.classList.contains("LightMode") && BlobToBeMoved.classList.contains("Selected"))
         { BlobType="SmallBlob"; BlobSizeWithBorder=22; UnitSizeOffset = 11; AttackingOffset= 11;}
 
-        else if (SomethingIsSelected("SmallBlob", Player))
+        else if (BlobToBeMoved.classList.contains("Selected"))
         { BlobType = "SmallBlob"; BlobSizeWithBorder=24; UnitSizeOffset = 12; AttackingOffset= 12; }
     }
 
