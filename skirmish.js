@@ -276,16 +276,16 @@ function ClickInMap(event)
         var BlobsSelectedToBeMovedP1;
         var BlobToBeMovedUnderAttack;
         Attacker = "P1"; Attacked = "P2";
-        GetBlobType("P1");
 
         if(ResourceCollection) {BlobsSelectedToBeMovedP1 = document.getElementsByClassName("ToBeDispatched Blob P1");}
         else {BlobsSelectedToBeMovedP1 = document.getElementsByClassName("Selected Blob P1");}
         BlobToBeMoved = BlobsSelectedToBeMovedP1[0];
+        GetBlobType("P1");
 
-        if(BlobToBeMoved.classList.contains("AttackMode")) {console.log("I can't move, I'm battling.");return;}
-        if(LowNestedDiv.classList.contains("AttackMode")) {console.log("Can't attack this blob, it's already battling.");return;}
-        if(BlobToBeMoved.classList.contains("UnderAttack")) {BlobToBeMovedUnderAttack = true;}
-        if(BlobToBeMoved.classList.contains("Attacking")) {BlobToBeMoved.classList.remove("Attacking");}
+        if (BlobToBeMoved.classList.contains("BattleMode")) {console.log("I can't move, I'm battling.");return;}
+        if (LowNestedDiv.classList.contains("BattleMode")) {console.log("Can't attack this blob, it's already battling.");return;}
+        if (BlobToBeMoved.classList.contains("UnderAttack")) {BlobToBeMovedUnderAttack = true;}
+        if (BlobToBeMoved.classList.contains("Attacking")) {BlobToBeMoved.classList.remove("Attacking");}
 
         if (BlobToBeMovedUnderAttack && Attacking || BlobToBeMovedUnderAttack && RefineryClicked) {console.log("This Blob can't do that, its under attack."); return;}
         else if (BlobToBeMovedUnderAttack) {BlobToBeMoved.classList.add("BlobUnderAttackMoved"); GetTargetCoordinates(false); UpdateAttackCommand();}
@@ -314,18 +314,18 @@ function ClickInMap(event)
         var BlobsSelectedToBeMovedP2;
         var BlobToBeMovedUnderAttack;
         Attacker = "P2"; Attacked = "P1";
-        GetBlobType("P2");
 
         if(ResourceCollection) {BlobsSelectedToBeMovedP2 = document.getElementsByClassName("ToBeDispatched Blob P2");}
         else {BlobsSelectedToBeMovedP2 = document.getElementsByClassName("Selected Blob P2");}
         BlobToBeMoved = BlobsSelectedToBeMovedP2[0];
+        GetBlobType("P2");
 
-        if(BlobToBeMoved.classList.contains("AttackMode")) {console.log("I can't move, I'm battling.");return;}
-        if(LowNestedDiv.classList.contains("AttackMode")) {console.log("Can't attack this blob, it's already battling.");return;}
-        if(BlobToBeMoved.classList.contains("UnderAttack")) {BlobToBeMovedUnderAttack = true;}
-        if(BlobToBeMoved.classList.contains("Attacking")) {BlobToBeMoved.classList.remove("Attacking");}
+        if (BlobToBeMoved.classList.contains("BattleMode")) {console.log("I can't move, I'm battling.");return;}
+        if (LowNestedDiv.classList.contains("BattleMode")) {console.log("Can't attack this blob, it's already battling.");return;}
+        if (BlobToBeMoved.classList.contains("UnderAttack")) {BlobToBeMovedUnderAttack = true;}
+        if (BlobToBeMoved.classList.contains("Attacking")) {BlobToBeMoved.classList.remove("Attacking");}
 
-        else if (BlobToBeMovedUnderAttack && Attacking || BlobToBeMovedUnderAttack && RefineryClicked) {console.log("This Blob can't do that, its under attack."); return;}
+        if (BlobToBeMovedUnderAttack && Attacking || BlobToBeMovedUnderAttack && RefineryClicked) {console.log("This Blob can't do that, its under attack."); return;}
         else if (BlobToBeMovedUnderAttack) {BlobToBeMoved.classList.add("BlobUnderAttackMoved"); GetTargetCoordinates(false); UpdateAttackCommand();}
         else if(Attacking) {GetTargetCoordinates(true);}
         else if(RefineryClicked) {GetTargetCoordinates(false);}

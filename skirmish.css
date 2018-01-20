@@ -303,19 +303,19 @@ body {
 /*Blobs theming begin*/
 .LightMode .Blob:hover,
 .LightMode .Blob.Selected,
-.LightMode .Blob.AttackMode {
+.LightMode .Blob.BattleMode {
     border: 1px solid #000;
 }
 
 .DarkMode1 .Blob:hover,
 .DarkMode1 .Blob.Selected,
-.DarkMode1 .Blob.AttackMode {
+.DarkMode1 .Blob.BattleMode {
     border: 2px solid #000;
 }
 
 .DarkMode2 .Blob:hover,
 .DarkMode2 .Blob.Selected,
-.DarkMode2 .Blob.AttackMode {
+.DarkMode2 .Blob.BattleMode {
     border: 2px solid #000;
 }
 
