@@ -4,7 +4,6 @@ var sidepanel;
 var mapheight;
 var mapwidth;
 var sidepanelwidth;
-// count +1 on every run for Blob ID's.
 var P1BlobCount = 2;
 var P2BlobCount = 2;
 function incrementP1()
@@ -93,6 +92,7 @@ document.addEventListener("DOMContentLoaded", EventListeners);
 function EventListeners()
 {
     var map = document.getElementById("map");
+    GetMapAndSidepanelSizes();
     map.addEventListener("click", ClickInMap);
     map.addEventListener("contextmenu", SecondaryClick);
     window.addEventListener("keydown", KeyboardShortcuts);
