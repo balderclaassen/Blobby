@@ -4,6 +4,8 @@ var sidepanel;
 var mapheight;
 var mapwidth;
 var sidepanelwidth;
+var NewTargetY;
+var NewTargetX;
 var P1BlobCount = 2;
 var P2BlobCount = 2;
 function incrementP1()
@@ -80,6 +82,8 @@ var PromptOnRefreshAtDefault = true;
 var RemainSelected = false;
 var ContextMenuShown = false;
 var PromptOnRefresh = true;
+
+var DevSpeed = true;
 // |||||||||||||||||||||||||||||||||| Functions used by other functions + Variable declarations end
 
 
@@ -289,7 +293,69 @@ function ClickInMap(event)
     }
 
 
+    function Battle()
     {
+        CreateAttackIndicators();
+        zIndex27();
+        var AttackStartedTimer;
+        AttackStartedTimer = window.setTimeout(AttackStarted, 2000);
+
+        function IfBlobUnderAttackMoves()
+        {
+            // console.log("Loop ran");
+            if (!BlobToBeMoved.classList.contains("Attacking"))
+            {
+                window.clearTimeout(AttackStartedTimer);
+                RemoveAttackIndicators();
+                BlobToBeMoved.style.removeProperty("z-index");
+                console.log("Attack Canceled.");
+                return;
+            }
+
+            if (LowNestedDiv.classList.contains("BlobUnderAttackMoved"))
+            {
+                window.clearTimeout(AttackStartedTimer);
+                console.log("Changed Target");
+                TargetCoordinateY = NewTargetY;
+                TargetCoordinateX = NewTargetX;
+                GetDirection(BlobToBeMoved, "", true);
+                CoordinateToPercentage();
+                console.log(TargetCoordinateY);
+                BlobToBeMoved.style.top = TargetCoordinateY;
+                BlobToBeMoved.style.left = TargetCoordinateX;
+                LowNestedDiv.classList.remove("BlobUnderAttackMoved");
+                Battle();
+            }
+        }
+        function LoopIfBlobUnderAttackMoves()
+        {
+
+                window.setTimeout(IfBlobUnderAttackMoves, 200);
+                window.setTimeout(IfBlobUnderAttackMoves, 400);
+                window.setTimeout(IfBlobUnderAttackMoves, 600);
+                window.setTimeout(IfBlobUnderAttackMoves, 800);
+                window.setTimeout(IfBlobUnderAttackMoves, 1000);
+                window.setTimeout(IfBlobUnderAttackMoves, 1200);
+                window.setTimeout(IfBlobUnderAttackMoves, 1400);
+                window.setTimeout(IfBlobUnderAttackMoves, 1600);
+                window.setTimeout(IfBlobUnderAttackMoves, 1800);
+                window.setTimeout(IfBlobUnderAttackMoves, 1950);
+        }
+
+        LoopIfBlobUnderAttackMoves();
+
+        function AttackStarted()
+        {
+            if(BlobToBeMoved.classList.contains("Attacking"))
+            {
+                BattleMode();
+                if(DevSpeed) {window.setTimeout(BlobBeaten, 2000);}
+                else {ChangezIndex(); window.setTimeout(BlobBeaten, 18000);}
+            }
+            else {if(LowNestedDiv.firstChild){RemoveAttackIndicators();}}
+        }
+    }
+
     function UpdateAttackCommand()
     {
         NewTargetY = TargetCoordinateY;
