@@ -13,11 +13,11 @@ var Pile = "B";
 
 var P1BlobCount = 2;
 var P2BlobCount = 2;
+
 function incrementP1()
 {
     return ++P1BlobCount;
 }
-
 function incrementP2()
 {
     return ++P2BlobCount;
@@ -79,6 +79,8 @@ function SomethingIsSelected(BlobType, Player)
 }
 
 var DevModeIsOn = false;
+
+
 
 var RemainSelectedAtDefault = true;
 var ContextMenuShownAtDefault = true;
@@ -211,6 +213,11 @@ function ClickInMap(event)
 {
     var LowNestedDiv = event.target;
     var HighNestedDiv = this;
+
+    console.log(event.pageY);
+    console.log(event.pageX);
+    console.log(LowNestedDiv);
+
     console.log(this);
     console.log(event.target);
     console.log(event);
@@ -504,7 +511,7 @@ function ClickInMap(event)
 
     function MoveBlobP1(Attacking, RefineryClicked, ResourceCollection)
     {
-        if (!SomethingIsSelected("SmallBlob", "P1")) {return;}
+        if (!ResourceCollection && !SomethingIsSelected("SmallBlob", "P1")) {return;}
         var BlobsSelectedToBeMovedP1;
         var BlobToBeMovedUnderAttack;
         Attacker = "P1"; Attacked = "P2";
@@ -540,9 +547,9 @@ function ClickInMap(event)
     }
 
 
-    function MoveBlobP2(Attacking, RefineryClicked, ResourceCollection, AIAttack)
+    function MoveBlobP2(Attacking, RefineryClicked, ResourceCollection)
     {
-        if (!SomethingIsSelected("SmallBlob", "P2")) {return;}
+        if (!ResourceCollection && !SomethingIsSelected("SmallBlob", "P2")) {return;}
         var BlobsSelectedToBeMovedP2;
         var BlobToBeMovedUnderAttack;
         Attacker = "P2"; Attacked = "P1";
@@ -619,17 +626,14 @@ function ClickInMap(event)
     else if (ContainsClassAnd(LowNestedDiv, "Refinery", "P1") && SomethingIsSelected("SmallBlob", "P1"))
     {
         MoveBlobP1(false, true, false);
-
         window.setTimeout(MoveBlobP1, 2000, false, false, true);
     }
 
     else if (DevModeIsOn && ContainsClassAnd(LowNestedDiv, "Refinery", "P2") && SomethingIsSelected("SmallBlob", "P2"))
     {
         MoveBlobP2(false, true, false);
-
         window.setTimeout(MoveBlobP2, 2000, false, false, true);
     }
-
 }
 // |||||||||||||||||||||||||||||||||| Move Blobs end
 
