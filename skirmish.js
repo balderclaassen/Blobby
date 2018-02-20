@@ -4,6 +4,9 @@ var sidepanel;
 var mapheight;
 var mapwidth;
 var sidepanelwidth;
+
+var ResPileAFull;
+var ResPileBFull;
 var NewTargetY;
 var NewTargetX;
 var Pile = "B";
@@ -211,14 +214,17 @@ function ClickInMap(event)
     console.log(this);
     console.log(event.target);
     console.log(event);
+
     var TargetCoordinateY;
     var TargetCoordinateX;
-    var UnitSizeOffset;
     var BlobType;
+    var UnitSizeOffset;
     var BlobSizeWithBorder;
     var AttackingOffset;
     var BlobToBeMoved;
 
+    var Attacker;
+    var Attacked;
     var ResourcePile1Base;
     var ResourcePile;
     var ResourceSpot;
@@ -293,6 +299,85 @@ function ClickInMap(event)
         console.log(mapwidth);
         console.log(TargetCoordinateY);
         console.log(TargetCoordinateX);
+    }
+
+    function GetFreeResourceSpotA()
+    {
+        for (var i = 2; i <= 100; i++)
+        {
+    		if ([1] > document.getElementById("Resource" + "A" + [i]))
+    		{
+                ResPileAFull = false;
+                LowNestedDiv.setAttribute("id", "Resource" + "A" + [i]);
+                if (i < 50 && i > 25) {x = i - 24;}
+                else if (i < 75) {x = i - 49;}
+                else if (i < 100) {x = i - 74;}
+                LowNestedDiv.classList.add("Resource" + [x]);
+                return;
+    		}
+    	}
+    }
+
+    function GetFreeResourceSpotB()
+    {
+        for (var i = 2; i <= 100; i++)
+        {
+            if ([1] > document.getElementById("Resource" + "B" + [i]))
+            {
+                ResPileBFull = false;
+                LowNestedDiv.setAttribute("id", "Resource" + "B" + [i]);
+                if (i < 50 && i > 25) {x = i - 24;}
+                else if (i < 75) {x = i - 49;}
+                else if (i < 100) {x = i - 74;}
+                LowNestedDiv.classList.add("Resource" + [x]);
+                return;
+            }
+        }
+    }
+
+    function TurnIntoResource(PileUsed)
+    {
+        ResourcePile.appendChild(LowNestedDiv);
+        if(PileUsed === "A") {GetFreeResourceSpotA();}
+        if(PileUsed === "B") {GetFreeResourceSpotB();}
+
+        LowNestedDiv.style.removeProperty("z-index");
+        LowNestedDiv.style.removeProperty("top");
+        LowNestedDiv.style.removeProperty("left");
+    }
+
+    function GetPileCenter(PileUsed)
+    {
+        ResourcePile1Base = document.getElementById("Resource" + PileUsed + "1Base");
+        TargetCoordinateY = GetBCRect(ResourcePile1Base, "Y");
+        TargetCoordinateX = GetBCRect(ResourcePile1Base, "X");
+        CoordinateToPercentage();
+    }
+
+    function BlobBeaten()
+    {
+        GetPile();
+        ResourcePile1Base = document.getElementById("Resource" + Pile + "1Base");
+        ResourcePile = document.getElementById("ResourcePile" + Pile);
+
+        LowNestedDiv.style.zIndex = "23";
+        BlobToBeMoved.style.removeProperty("z-index");
+        LowNestedDiv.classList.remove("Blob");
+        LowNestedDiv.classList.remove("SmallBlob");
+        LowNestedDiv.classList.remove("P1");
+        LowNestedDiv.classList.remove("P2");
+        BlobToBeMoved.classList.remove("BattleMode");
+        LowNestedDiv.classList.remove("BattleMode");
+        LowNestedDiv.classList.add("Resource");
+
+
+        GetPileCenter(Pile);
+        console.log(TargetCoordinateY);
+        LowNestedDiv.style.top = TargetCoordinateY;
+        LowNestedDiv.style.left = TargetCoordinateX;
+
+        // this time of 10sec depends on the 7s transition speed of the Resource.
+        window.setTimeout(TurnIntoResource, 10100, Pile);
     }
 
     function CreateAttackIndicators() {
