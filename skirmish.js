@@ -225,6 +225,7 @@ function ClickInMap(event)
 
     GetMapAndSidepanelSizes();
 
+    if (LowNestedDiv.classList.contains("AttackIndicator")) {LowNestedDiv = LowNestedDiv.parentElement;}
     function GetBlobType(Player)
     {
         if (document.body.classList.contains("LightMode") && BlobToBeMoved.classList.contains("Selected"))
