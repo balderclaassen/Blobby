@@ -6,6 +6,8 @@ var mapwidth;
 var sidepanelwidth;
 var NewTargetY;
 var NewTargetX;
+var Pile = "B";
+
 var P1BlobCount = 2;
 var P2BlobCount = 2;
 function incrementP1()
@@ -292,6 +294,58 @@ function ClickInMap(event)
         console.log(TargetCoordinateX);
     }
 
+    function CreateAttackIndicators() {
+        if(!LowNestedDiv.firstChild)
+        {
+            var NewAttackIndicator;
+
+            BlobToBeMoved.classList.add("Attacking");
+            NewAttackIndicator = document.createElement("div");
+            LowNestedDiv.appendChild(NewAttackIndicator);
+            NewAttackIndicator.classList.add("AttackIndicator");
+            NewAttackIndicator.classList.add(Attacker);
+
+            LowNestedDiv.classList.add("UnderAttack");
+            NewAttackIndicator = document.createElement("div");
+            BlobToBeMoved.appendChild(NewAttackIndicator);
+            NewAttackIndicator.classList.add("AttackIndicator");
+            NewAttackIndicator.classList.add(Attacked);
+        }
+    }
+
+    function RemoveAttackIndicators()
+    {
+        if(LowNestedDiv.firstChild)
+        {
+            BlobToBeMoved.classList.remove("Attacking");
+            LowNestedDiv.classList.remove("UnderAttack");
+            LowNestedDiv.classList.remove("BlobUnderAttackMoved");
+            BlobToBeMoved.removeChild(BlobToBeMoved.firstChild);
+            LowNestedDiv.removeChild(LowNestedDiv.firstChild);
+        }
+    }
+
+        function GetPile() {if (Pile === "A") {Pile = "B";} else if (Pile === "B") {Pile = "A";}}
+        function zIndex24(){BlobToBeMoved.style.zIndex = "24";}
+        function zIndex27(){BlobToBeMoved.style.zIndex = "27";}
+
+        function ChangezIndex() {
+        window.setTimeout(zIndex24, 2000);
+        window.setTimeout(zIndex27, 4000);
+        window.setTimeout(zIndex24, 6000);
+        window.setTimeout(zIndex27, 8000);
+        window.setTimeout(zIndex24, 10000);
+        window.setTimeout(zIndex27, 12000);
+        window.setTimeout(zIndex24, 14000);
+        window.setTimeout(zIndex27, 16000);
+        }
+
+    function BattleMode()
+    {
+        BlobToBeMoved.classList.add("BattleMode");
+        LowNestedDiv.classList.add("BattleMode");
+        RemoveAttackIndicators();
+    }
 
     function Battle()
     {
