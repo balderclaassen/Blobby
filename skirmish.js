@@ -11,8 +11,8 @@ var NewTargetY;
 var NewTargetX;
 var Pile = "B";
 
-var P1BlobCount = 2;
-var P2BlobCount = 2;
+var P1BlobCount = 5;
+var P2BlobCount = 5;
 
 function incrementP1()
 {
