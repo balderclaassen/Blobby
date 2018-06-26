@@ -214,6 +214,16 @@ body {
     transition: left 2.2s, right 2.2s, top 2.2s, bottom 2.2s linear;
 }
 
+.AttackIndicator {
+    position: absolute;
+    border-radius: 50%;
+    top: 40%;
+    bottom: 40%;
+    left: 40%;
+    right: 40%;
+}
+
+
 #P1Spawner {
     top: calc(15% - 40px);
     left: calc(15% - 40px);
